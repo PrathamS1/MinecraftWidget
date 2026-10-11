@@ -17,6 +17,6 @@
         android:layout_gravity="center"
         android:alpha="0.55"
         android:contentDescription="@string/widget_loading"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:src="@mipmap/ic_launcher" />
 
 </FrameLayout>
