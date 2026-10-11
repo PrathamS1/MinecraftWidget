@@ -2,7 +2,6 @@
 
 [![Platform](https://img.shields.io/badge/Platform-Android_8.0+-3DDC84.svg?style=flat&logo=android)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-7F52FF.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 MinecraftWidget is an open-source Android home screen widget application designed to bring animated Minecraft mobs directly to your launcher. Built with battery efficiency, low memory overhead, and an authentic Minecraft aesthetic at its core, the application runs smooth pixel-art animations using native system components without background battery drain.
 
@@ -186,8 +185,3 @@ NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR 
 
 Minecraft is a trademark of Mojang Synergies AB. All mob models, textures, names, and sound effects are copyright and trademark property of Mojang Synergies AB and Microsoft Corporation. This project is an open-source fan application created strictly for personal and non-commercial educational use under fair use principles.
 
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
