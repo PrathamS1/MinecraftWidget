@@ -1,0 +1,617 @@
+{
+    "entities":  [
+                     {
+                         "s":  "allay",
+                         "n":  "Allay",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  1,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/allay/sounds/Allay_death1.ogg.mp3",
+                                     "mobs/allay/sounds/Allay_idle_without_item2.ogg.mp3",
+                                     "mobs/allay/sounds/Allay_idle_without_item3.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "axolotl",
+                         "n":  "Axolotl",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  2,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/axolotl/sounds/Axolotl_attack1.ogg.mp3",
+                                     "mobs/axolotl/sounds/Axolotl_death2.ogg.mp3",
+                                     "mobs/axolotl/sounds/Axolotl_idle1.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "bat",
+                         "n":  "Bat",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  3,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/bat/sounds/Bat_death.ogg",
+                                     "mobs/bat/sounds/Bat_idle1.ogg",
+                                     "mobs/bat/sounds/Bat_loop.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "bee",
+                         "n":  "Bee",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  4,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/bee/sounds/Bee_aggressive1.ogg.mp3",
+                                     "mobs/bee/sounds/Bee_aggressive3.ogg.mp3",
+                                     "mobs/bee/sounds/Bee_loop5.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "blaze",
+                         "n":  "Blaze",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  5,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/blaze/sounds/Blaze_death.ogg",
+                                     "mobs/blaze/sounds/Blaze_idle1.ogg",
+                                     "mobs/blaze/sounds/Blaze_idle3.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "cat",
+                         "n":  "Cat",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  6,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/cat/sounds/Cat_baby_ambient1.ogg",
+                                     "mobs/cat/sounds/Cat_baby_ambient3.ogg",
+                                     "mobs/cat/sounds/Cat_baby_ambient6.ogg",
+                                     "mobs/cat/sounds/Cat_baby_ambient7.ogg",
+                                     "mobs/cat/sounds/Cat_idle3.ogg.mp3",
+                                     "mobs/cat/sounds/Cat_royal_ambient3.ogg",
+                                     "mobs/cat/sounds/Cat_royal_hurt1.ogg",
+                                     "mobs/cat/sounds/Stray_cat_idle2.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "chicken",
+                         "n":  "Chicken",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  7,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/chicken/sounds/Chicken_idle1.ogg",
+                                     "mobs/chicken/sounds/Chicken_picky_ambient2.ogg",
+                                     "mobs/chicken/sounds/Chicken_plop.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "creeper",
+                         "n":  "Creeper",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  8,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/creeper/sounds/Creeper_fuse.ogg",
+                                     "mobs/creeper/sounds/Creeper_hurt1.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "dolphin",
+                         "n":  "Dolphin",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  9,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/dolphin/sounds/Dolphin_idle3.ogg.mp3",
+                                     "mobs/dolphin/sounds/Dolphin_play1.ogg.mp3",
+                                     "mobs/dolphin/sounds/Dolphin_swim3.ogg.mp3",
+                                     "mobs/dolphin/sounds/Dolphin_water_idle10.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "enderman",
+                         "n":  "Enderman",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  10,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/enderman/sounds/Enderman_death.ogg",
+                                     "mobs/enderman/sounds/Enderman_idle2.ogg",
+                                     "mobs/enderman/sounds/Enderman_scream3.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "ender_dragon",
+                         "n":  "Ender Dragon",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  11,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/ender_dragon/sounds/Ender_dragon_flap6.ogg",
+                                     "mobs/ender_dragon/sounds/Ender_dragon_idle3.ogg",
+                                     "mobs/ender_dragon/sounds/Ender_dragon_idle4.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "evoker",
+                         "n":  "Evoker",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  12,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/evoker/sounds/Evoker_cast2.ogg",
+                                     "mobs/evoker/sounds/Evoker_celebrate.ogg.mp3",
+                                     "mobs/evoker/sounds/Evoker_prepare_attack1.ogg.mp3",
+                                     "mobs/evoker/sounds/Evoker_prepare_summon.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "fire",
+                         "n":  "Fire",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  13,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/fire/sounds/Campfire_crackle4.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "fox",
+                         "n":  "Fox",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  14,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/fox/sounds/Fox_hurt1.ogg.mp3",
+                                     "mobs/fox/sounds/Fox_idle1.ogg.mp3",
+                                     "mobs/fox/sounds/Fox_screech1.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "frog",
+                         "n":  "Frog",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  15,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/frog/sounds/Frog_death2.ogg",
+                                     "mobs/frog/sounds/Frog_idle1.ogg",
+                                     "mobs/frog/sounds/Frog_idle8.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "ghast",
+                         "n":  "Ghast",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  16,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/ghast/sounds/Ghast_charge.ogg",
+                                     "mobs/ghast/sounds/Ghast_idle4.ogg",
+                                     "mobs/ghast/sounds/Ghast_idle7.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "hoglin",
+                         "n":  "Hoglin",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  17,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/hoglin/sounds/Hoglin_angry2.ogg.mp3",
+                                     "mobs/hoglin/sounds/Hoglin_hurt1.ogg.mp3",
+                                     "mobs/hoglin/sounds/Hoglin_hurt4.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "illusioner",
+                         "n":  "Illusioner",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  18,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/illusioner/sounds/Illusioner_idle1.ogg",
+                                     "mobs/illusioner/sounds/Illusioner_idle3.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "llama",
+                         "n":  "Llama",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  19,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/llama/sounds/Llama_idle3.ogg",
+                                     "mobs/llama/sounds/Llama_idle4.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "panda",
+                         "n":  "Panda",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  20,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/panda/sounds/Panda_idle2.ogg.mp3",
+                                     "mobs/panda/sounds/Panda_idle4.ogg.mp3",
+                                     "mobs/panda/sounds/Panda_sneeze1.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "parrot",
+                         "n":  "Parrot",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  21,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/parrot/sounds/Parrot_fly6.ogg.mp3",
+                                     "mobs/parrot/sounds/Parrot_idle1.ogg.mp3",
+                                     "mobs/parrot/sounds/Parrot_idle2.ogg.mp3",
+                                     "mobs/parrot/sounds/Parrot_idle4.ogg.mp3",
+                                     "mobs/parrot/sounds/Parrot_idle5.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "pig",
+                         "n":  "Pig",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  22,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/pig/sounds/Pig_baby_ambient4.ogg",
+                                     "mobs/pig/sounds/Pig_idle1.ogg",
+                                     "mobs/pig/sounds/Pig_idle2.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "piglin",
+                         "n":  "Piglin",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  23,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/piglin/sounds/Piglin_angry1.ogg.mp3",
+                                     "mobs/piglin/sounds/Piglin_idle4.ogg.mp3",
+                                     "mobs/piglin/sounds/Piglin_jealous5.ogg.mp3",
+                                     "mobs/piglin/sounds/Piglin_retreat4.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "pillager",
+                         "n":  "Pillager",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  24,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/pillager/sounds/Pillager_celebrate4.ogg.mp3",
+                                     "mobs/pillager/sounds/Pillager_horn_celebrate.ogg.mp3",
+                                     "mobs/pillager/sounds/Pillager_hurt2.ogg.mp3",
+                                     "mobs/pillager/sounds/Pillager_idle4.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "polar_bear",
+                         "n":  "Polar Bear",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  25,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/polar_bear/sounds/Polar_bear_idle2.ogg",
+                                     "mobs/polar_bear/sounds/Polar_bear_idle3.ogg",
+                                     "mobs/polar_bear/sounds/Polar_bear_roar1.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "rabbit",
+                         "n":  "Rabbit",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  26,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/rabbit/sounds/Rabbit_attack4.ogg",
+                                     "mobs/rabbit/sounds/Rabbit_hurt1.ogg",
+                                     "mobs/rabbit/sounds/Rabbit_hurt3.ogg",
+                                     "mobs/rabbit/sounds/Rabbit_idle2.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "ravager",
+                         "n":  "Ravager",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  27,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/ravager/sounds/Ravager_bite3.ogg.mp3",
+                                     "mobs/ravager/sounds/Ravager_celebrate2.ogg.mp3",
+                                     "mobs/ravager/sounds/Ravager_roar1.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "sheep",
+                         "n":  "Sheep",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  28,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/sheep/sounds/Sheep1.ogg",
+                                     "mobs/sheep/sounds/Sheep2.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "skeleton",
+                         "n":  "Skeleton",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  29,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/skeleton/sounds/Skeleton_death.ogg",
+                                     "mobs/skeleton/sounds/Skeleton_hurt4.ogg",
+                                     "mobs/skeleton/sounds/Skeleton_idle3.ogg",
+                                     "mobs/skeleton/sounds/Skeleton_step1.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "skeleton_horse",
+                         "n":  "Skeleton Horse",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  30,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/skeleton_horse/sounds/Skeleton_horse_idle1.ogg",
+                                     "mobs/skeleton_horse/sounds/Skeleton_horse_water_jump.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "sniffer",
+                         "n":  "Sniffer",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  31,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/sniffer/sounds/Sniffer_happy4.ogg.mp3",
+                                     "mobs/sniffer/sounds/Sniffer_searching4.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "spider",
+                         "n":  "Spider",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  32,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/spider/sounds/Spider_death.ogg",
+                                     "mobs/spider/sounds/Spider_idle3.ogg",
+                                     "mobs/spider/sounds/Spider_step1.ogg",
+                                     "mobs/spider/sounds/Spider_step4.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "stray",
+                         "n":  "Stray",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  33,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/stray/sounds/Stray_convert3.ogg.mp3",
+                                     "mobs/stray/sounds/Stray_hurt4.ogg",
+                                     "mobs/stray/sounds/Stray_idle4.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "vex",
+                         "n":  "Vex",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  34,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/vex/sounds/Vex_charge2.ogg",
+                                     "mobs/vex/sounds/Vex_death2.ogg",
+                                     "mobs/vex/sounds/Vex_idle3.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "villager",
+                         "n":  "Villager",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  35,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/villager/sounds/Villager_accept2.ogg",
+                                     "mobs/villager/sounds/Villager_deny2.ogg",
+                                     "mobs/villager/sounds/Villager_idle1.ogg",
+                                     "mobs/villager/sounds/Villager_trade2.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "vindicator",
+                         "n":  "Vindicator",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  36,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/vindicator/sounds/Vindicator_death1.ogg",
+                                     "mobs/vindicator/sounds/Vindicator_idle1.ogg",
+                                     "mobs/vindicator/sounds/Vindicator_idle4.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "warden",
+                         "n":  "Warden",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  37,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/warden/sounds/Sonic_boom4.ogg.mp3",
+                                     "mobs/warden/sounds/Warden_agitated6.ogg.mp3",
+                                     "mobs/warden/sounds/Warden_heartbeat1.ogg",
+                                     "mobs/warden/sounds/Warden_listening_angry5.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "witch",
+                         "n":  "Witch",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  38,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/witch/sounds/Witch_drink3.ogg.mp3",
+                                     "mobs/witch/sounds/Witch_idle4.ogg",
+                                     "mobs/witch/sounds/Witch_throw2.ogg.mp3"
+                                 ]
+                     },
+                     {
+                         "s":  "wither",
+                         "n":  "Wither",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  39,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/wither/sounds/Wither_death.ogg",
+                                     "mobs/wither/sounds/Wither_hurt2.ogg",
+                                     "mobs/wither/sounds/Wither_idle1.ogg",
+                                     "mobs/wither/sounds/Wither_shoot.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "wither_skeleton",
+                         "n":  "Wither Skeleton",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  40,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/wither_skeleton/sounds/Wither_skeleton_hurt1.ogg",
+                                     "mobs/wither_skeleton/sounds/Wither_skeleton_idle2.ogg.mp3",
+                                     "mobs/wither_skeleton/sounds/Wither_skeleton_step2.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "wolf",
+                         "n":  "Wolf",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  41,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/wolf/sounds/Wolf_baby_ambient2.ogg.mp3",
+                                     "mobs/wolf/sounds/Wolf_baby_ambient6.ogg.mp3",
+                                     "mobs/wolf/sounds/Wolf_growl1.ogg",
+                                     "mobs/wolf/sounds/Wolf_hurt3.ogg",
+                                     "mobs/wolf/sounds/Wolf_idle2.ogg",
+                                     "mobs/wolf/sounds/Wolf_shake.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "zombie",
+                         "n":  "Zombie",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  42,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/zombie/sounds/Zombie_hurt1.ogg",
+                                     "mobs/zombie/sounds/Zombie_idle2.ogg",
+                                     "mobs/zombie/sounds/Zombie_idle3.ogg"
+                                 ]
+                     },
+                     {
+                         "s":  "zombie_villager",
+                         "n":  "Zombie Villager",
+                         "t":  [
+                                   "Default"
+                               ],
+                         "i":  43,
+                         "c":  "Mobs",
+                         "snd":  [
+                                     "mobs/zombie_villager/sounds/Zombie_villager_death.ogg",
+                                     "mobs/zombie_villager/sounds/Zombie_villager_idle2.ogg"
+                                 ]
+                     }
+                 ]
+}

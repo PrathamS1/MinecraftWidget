@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+local.properties
+.idea/
+.kotlin/
+.DS_Store
+/build
+captures/
+.externalNativeBuild
+.cxx
+
+# Project specific
+TempFolder/
+scratch/

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MinecraftWidget</string>
+    <string name="configure_widget">Set up widget</string>
+
+    <string name="widget_small">Mob sprite (small)</string>
+    <string name="widget_medium">Mob sprite (medium)</string>
+    <string name="widget_large">Mob sprite (large)</string>
+    <string name="widget_loading">Loading sprite</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MinecraftWidget" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/poke_paper</item>
+        <item name="android:colorBackground">@color/poke_paper</item>
+    </style>
+</resources>

@@ -1,0 +1,431 @@
+package com.example.minecraftwidget.sprite
+
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Matrix
+import android.graphics.Paint
+import android.graphics.Rect
+import android.graphics.RectF
+import kotlin.math.min
+import kotlin.math.roundToInt
+
+/** Pixel-art safe bitmap helpers. Nothing here may ever apply bilinear filtering. */
+object BitmapOps {
+
+    /**
+     * Smallest rectangle containing every non-transparent pixel across all frames.
+     *
+     * Cropping to this before scaling is what buys the frame budget back: Showdown
+     * sprites are padded to a common canvas, so a lot of every frame is empty. Using the
+     * *union* across frames (rather than per-frame bounds) keeps the sprite from
+     * jittering as its silhouette changes.
+     */
+    fun unionOpaqueBounds(frames: List<Bitmap>, alphaThreshold: Int = 8): Rect {
+        if (frames.isEmpty()) return Rect()
+        val w = frames[0].width
+        val h = frames[0].height
+        var left = w
+        var top = h
+        var right = -1
+        var bottom = -1
+
+        val row = IntArray(w)
+        for (frame in frames) {
+            if (frame.width != w || frame.height != h) continue
+            for (y in 0 until h) {
+                frame.getPixels(row, 0, w, 0, y, w, 1)
+                var rowLeft = -1
+                var rowRight = -1
+                for (x in 0 until w) {
+                    if (Color.alpha(row[x]) > alphaThreshold) {
+                        if (rowLeft < 0) rowLeft = x
+                        rowRight = x
+                    }
+                }
+                if (rowLeft >= 0) {
+                    if (rowLeft < left) left = rowLeft
+                    if (rowRight > right) right = rowRight
+                    if (y < top) top = y
+                    if (y > bottom) bottom = y
+                }
+            }
+        }
+        // A fully transparent animation would produce an inverted rect; fall back to full size.
+        return if (right < left || bottom < top) Rect(0, 0, w, h)
+        else Rect(left, top, right + 1, bottom + 1)
+    }
+
+    /**
+     * Maps each frame to the index of the first frame with identical pixels.
+     *
+     * Sprite idle loops very often play a motion and then reverse it, so the back half of
+     * the animation is frequently pixel-for-pixel the front half. Collapsing those onto
+     * one shared bitmap is close to free and directly buys sprite size: the widget's
+     * memory budget is spent on *distinct* frames, so halving them lets the planner keep
+     * a larger upscale.
+     *
+     * Only the cropped region is compared, since that is all that ends up on screen.
+     */
+    fun canonicalFrames(frames: List<Bitmap>, bounds: Rect): List<Int> {
+        if (frames.size <= 1) return List(frames.size) { it }
+        val w = bounds.width()
+        val h = bounds.height()
+        val buffer = IntArray(w * h)
+        val byHash = HashMap<Long, MutableList<Pair<Int, IntArray>>>()
+        val canonical = IntArray(frames.size) { it }
+
+        for ((i, frame) in frames.withIndex()) {
+            if (frame.width < bounds.right || frame.height < bounds.bottom) continue
+            frame.getPixels(buffer, 0, w, bounds.left, bounds.top, w, h)
+
+            var hash = -0x340d631b7bdddcdbL // FNV-1a 64-bit offset basis
+            for (p in buffer) {
+                hash = (hash xor p.toLong()) * 0x100000001b3L
+            }
+            val bucket = byHash.getOrPut(hash) { mutableListOf() }
+            // Verify on hash match: a collision here would show as a visibly wrong frame.
+            val match = bucket.firstOrNull { it.second.contentEquals(buffer) }
+            if (match != null) {
+                canonical[i] = match.first
+            } else {
+                bucket.add(i to buffer.copyOf())
+            }
+        }
+        return canonical.toList()
+    }
+
+    /**
+     * Crops, upscales by an exact integer factor, then shrinks the result to fit the
+     * widget's content box when it is still larger than the box.
+     *
+     * The two directions want opposite treatment. Upscaling is integer-only and
+     * nearest-neighbour, because that is what keeps 8-bit art crisp. Downscaling only ever
+     * applies to the sets that overflow a widget in the first place — official artwork is
+     * a 475 px canvas holding 431x402 of actual art, Entity HOME is 512 px,
+     * Scarlet/Violet is 256 px — and those are high-resolution renders rather than pixel
+     * art, so they are resampled with filtering.
+     *
+     * Fitting has to happen here because the frame's ImageView is scaleType="center",
+     * which never shrinks anything: it clips. Without this, any Entity drawn larger than
+     * the widget lands on the home screen as a centre crop of its own torso — which is
+     * exactly why the artwork, HOME and Scarlet/Violet sets looked fine in the app and
+     * blank-to-unrecognisable in the widget.
+     *
+     * @param boxWidth the widget's content box width in pixels; 0 or less skips fitting.
+     * @param boxHeight likewise for height.
+     */
+    fun cropScaleFit(
+        source: Bitmap,
+        bounds: Rect,
+        scale: Int,
+        boxWidth: Int,
+        boxHeight: Int,
+    ): Bitmap {
+        val out = cropAndScale(source, bounds, scale)
+        if (boxWidth <= 0 || boxHeight <= 0) return out
+        if (out.width <= boxWidth && out.height <= boxHeight) return out
+
+        val ratio = min(boxWidth.toFloat() / out.width, boxHeight.toFloat() / out.height)
+        val fitted = Bitmap.createScaledBitmap(
+            out,
+            (out.width * ratio).roundToInt().coerceAtLeast(1),
+            (out.height * ratio).roundToInt().coerceAtLeast(1),
+            true,
+        )
+        if (out !== fitted) out.recycle()
+        return fitted
+    }
+
+    /**
+     * Crops then upscales by an exact integer factor with nearest-neighbour sampling.
+     *
+     * Always returns a bitmap distinct from [source]. That is a correctness requirement,
+     * not an optimisation: the renderer recycles the decoded source frames as soon as it
+     * has composed the RemoteViews, so handing one of them straight through leaves the
+     * launcher holding a recycled bitmap and `updateAppWidget` throws
+     * `IllegalStateException: Can't parcel a recycled bitmap` — the widget then never
+     * appears at all. It is reachable whenever a sprite's opaque content fills its whole
+     * canvas (X/Y and much of Scarlet/Violet ship pre-cropped) and the widget is too small
+     * to upscale it, because both `createBitmap` and `createScaledBitmap` return their
+     * argument unchanged when the transform is a no-op.
+     */
+    fun cropAndScale(source: Bitmap, bounds: Rect, scale: Int): Bitmap {
+        val cropped = if (bounds.left == 0 && bounds.top == 0 &&
+            bounds.width() == source.width && bounds.height() == source.height
+        ) {
+            source
+        } else {
+            Bitmap.createBitmap(
+                source,
+                bounds.left.coerceIn(0, source.width - 1),
+                bounds.top.coerceIn(0, source.height - 1),
+                bounds.width().coerceAtMost(source.width - bounds.left),
+                bounds.height().coerceAtMost(source.height - bounds.top),
+            )
+        }
+        if (scale <= 1) {
+            return if (cropped === source) source.copy(source.config ?: Bitmap.Config.ARGB_8888, false)
+            else cropped
+        }
+
+        // filter = false is the whole point: bilinear turns 8-bit art into mush.
+        val scaled = Bitmap.createScaledBitmap(
+            cropped, cropped.width * scale, cropped.height * scale, false,
+        )
+        if (cropped !== source && cropped !== scaled) cropped.recycle()
+        return scaled
+    }
+
+    /**
+     * Crops, then resizes to an exact pixel size.
+     *
+     * Growing is nearest-neighbour, even by a fractional factor: a 4.3× sprite gets a few
+     * source pixels one screen pixel wider than their neighbours, which is invisible, while
+     * bilinear would blur every edge. Shrinking — only ever needed for high-resolution renders
+     * that overflow the widget — is filtered, because those are not pixel art.
+     *
+     * Like [cropAndScale], always returns a bitmap distinct from [source].
+     */
+    fun cropScaleTo(source: Bitmap, bounds: Rect, widthPx: Int, heightPx: Int): Bitmap {
+        val cropped = cropAndScale(source, bounds, 1)
+        val w = widthPx.coerceAtLeast(1)
+        val h = heightPx.coerceAtLeast(1)
+        if (w == cropped.width && h == cropped.height) return cropped
+        val shrinking = w < cropped.width || h < cropped.height
+        val scaled = Bitmap.createScaledBitmap(cropped, w, h, shrinking)
+        if (scaled !== cropped) cropped.recycle()
+        return scaled
+    }
+
+
+    /**
+     * A horizontally mirrored copy, so the sprite faces the other way. Recycles [source].
+     *
+     * Done to the bitmap rather than the view: `View.setScaleX` only became callable through
+     * `RemoteViews` in API 31, and a flip that worked on some phones and silently did
+     * nothing on others would be worse than no flip at all.
+     */
+    fun mirrored(source: Bitmap): Bitmap {
+        val matrix = Matrix().apply {
+            setScale(-1f, 1f)
+            postTranslate(source.width.toFloat(), 0f)
+        }
+        val out = Bitmap.createBitmap(source, 0, 0, source.width, source.height, matrix, false)
+        if (out !== source) source.recycle()
+        return out
+    }
+
+    /**
+     * Resizes to an exact pixel size with nearest-neighbour sampling.
+     *
+     * Unlike [cropAndScale] this permits a non-integer ratio, because the procedural idle
+     * animation needs shapes a few percent off natural — a squash of exactly 1x is no
+     * squash at all. Sampling stays nearest-neighbour, so a 3% vertical squash drops
+     * whole rows rather than blending them, which is precisely what the games do and what
+     * keeps the art crisp.
+     *
+     * Returns [source] itself when the requested size is already the current one, so a
+     * loop's natural-shape steps cost no extra bitmap.
+     */
+    fun resize(source: Bitmap, widthPx: Int, heightPx: Int): Bitmap {
+        val w = widthPx.coerceAtLeast(1)
+        val h = heightPx.coerceAtLeast(1)
+        if (w == source.width && h == source.height) return source
+        return Bitmap.createScaledBitmap(source, w, h, false)
+    }
+
+    /**
+     * Creates an organic smooth blob path centered in [width] x [height].
+     */
+    fun createBlobPath(width: Float, height: Float): android.graphics.Path {
+        val path = android.graphics.Path()
+        val cx = width / 2f
+        val cy = height / 2f
+        val rx = width / 2f
+        val ry = height / 2f
+        val factors = floatArrayOf(0.98f, 0.88f, 1.02f, 0.90f, 1.03f, 0.85f)
+        val n = factors.size
+        val pts = Array(n) { i ->
+            val angle = (i * 2.0 * Math.PI / n).toFloat()
+            android.graphics.PointF(
+                cx + rx * factors[i] * kotlin.math.cos(angle),
+                cy + ry * factors[i] * kotlin.math.sin(angle)
+            )
+        }
+        val mid0 = android.graphics.PointF((pts[0].x + pts[1].x) / 2f, (pts[0].y + pts[1].y) / 2f)
+        path.moveTo(mid0.x, mid0.y)
+        for (i in 0 until n) {
+            val next = pts[(i + 1) % n]
+            val afterNext = pts[(i + 2) % n]
+            val mid = android.graphics.PointF((next.x + afterNext.x) / 2f, (next.y + afterNext.y) / 2f)
+            path.quadTo(next.x, next.y, mid.x, mid.y)
+        }
+        path.close()
+        return path
+    }
+
+    /**
+     * Draws a background plate directly behind an entity in the specified shape.
+     */
+    fun shapePlate(
+        widthPx: Int,
+        heightPx: Int,
+        shape: com.example.minecraftwidget.data.BackgroundShape,
+        color: Int,
+        cornerRadiusPx: Float = 0f,
+    ): Bitmap {
+        val w = widthPx.coerceAtLeast(1)
+        val h = heightPx.coerceAtLeast(1)
+        val bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bmp)
+        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { this.color = color }
+        val rect = RectF(0f, 0f, w.toFloat(), h.toFloat())
+
+        when (shape) {
+            com.example.minecraftwidget.data.BackgroundShape.SQUARE -> {
+                canvas.drawRect(rect, paint)
+            }
+            com.example.minecraftwidget.data.BackgroundShape.ROUNDED -> {
+                val r = if (cornerRadiusPx > 0f) cornerRadiusPx else 16f
+                canvas.drawRoundRect(rect, r, r, paint)
+            }
+            com.example.minecraftwidget.data.BackgroundShape.CIRCLE -> {
+                canvas.drawOval(rect, paint)
+            }
+            com.example.minecraftwidget.data.BackgroundShape.BLOB -> {
+                val path = createBlobPath(w.toFloat(), h.toFloat())
+                canvas.drawPath(path, paint)
+            }
+        }
+        return bmp
+    }
+
+    /**
+     * Draws a scene background plate shaped directly behind an entity.
+     */
+    fun sceneShapePlate(
+        source: Bitmap,
+        widthPx: Int,
+        heightPx: Int,
+        shape: com.example.minecraftwidget.data.BackgroundShape,
+        cornerRadiusPx: Float = 0f,
+    ): Bitmap {
+        val w = widthPx.coerceAtLeast(1)
+        val h = heightPx.coerceAtLeast(1)
+        val bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bmp)
+        val rect = RectF(0f, 0f, w.toFloat(), h.toFloat())
+
+        val clipPath = android.graphics.Path()
+        when (shape) {
+            com.example.minecraftwidget.data.BackgroundShape.SQUARE -> {
+                clipPath.addRect(rect, android.graphics.Path.Direction.CW)
+            }
+            com.example.minecraftwidget.data.BackgroundShape.ROUNDED -> {
+                val r = if (cornerRadiusPx > 0f) cornerRadiusPx else 16f
+                clipPath.addRoundRect(rect, r, r, android.graphics.Path.Direction.CW)
+            }
+            com.example.minecraftwidget.data.BackgroundShape.CIRCLE -> {
+                clipPath.addOval(rect, android.graphics.Path.Direction.CW)
+            }
+            com.example.minecraftwidget.data.BackgroundShape.BLOB -> {
+                clipPath.addPath(createBlobPath(w.toFloat(), h.toFloat()))
+            }
+        }
+        canvas.clipPath(clipPath)
+
+        val paint = Paint(Paint.FILTER_BITMAP_FLAG or Paint.ANTI_ALIAS_FLAG)
+        val scale = maxOf(w.toFloat() / source.width, h.toFloat() / source.height)
+        val scaledW = source.width * scale
+        val scaledH = source.height * scale
+        val left = (w - scaledW) / 2f
+        val top = (h - scaledH) / 2f
+        val dest = RectF(left, top, left + scaledW, top + scaledH)
+        canvas.drawBitmap(source, null, dest, paint)
+        return bmp
+    }
+
+    /**
+     * The widget's background plate. Drawn as its own bitmap rather than a themed
+     * drawable so colour, opacity and corner radius are all freely configurable and the
+     * sprite bitmaps stay pure alpha.
+     */
+    fun roundedPlate(widthPx: Int, heightPx: Int, color: Int, cornerRadiusPx: Float): Bitmap {
+        val bmp = Bitmap.createBitmap(
+            widthPx.coerceAtLeast(1), heightPx.coerceAtLeast(1), Bitmap.Config.ARGB_8888,
+        )
+        val canvas = Canvas(bmp)
+        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { this.color = color }
+        canvas.drawRoundRect(
+            RectF(0f, 0f, bmp.width.toFloat(), bmp.height.toFloat()),
+            cornerRadiusPx, cornerRadiusPx, paint,
+        )
+        return bmp
+    }
+
+
+    /**
+     * A battle background cut to the widget's shape, at [widthPx]×[heightPx], with rounded
+     * corners. Painted scenery rather than sprite art, so it is filtered when resized — and
+     * it is usually stored smaller than the widget and stretched, to leave the memory budget
+     * for the Pokémon.
+     *
+     * @param crop the part of [source] to use; see `SceneLayout.coverCrop`.
+     */
+    fun battlePlate(
+        source: Bitmap,
+        crop: Rect,
+        widthPx: Int,
+        heightPx: Int,
+        cornerRadiusPx: Float,
+        mirrored: Boolean = false,
+        pixelArt: Boolean = false,
+    ): Bitmap {
+        val out = Bitmap.createBitmap(widthPx.coerceAtLeast(1), heightPx.coerceAtLeast(1), Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(out)
+        val bounds = RectF(0f, 0f, out.width.toFloat(), out.height.toFloat())
+        if (cornerRadiusPx > 0f) {
+            val clip = android.graphics.Path().apply {
+                addRoundRect(bounds, cornerRadiusPx, cornerRadiusPx, android.graphics.Path.Direction.CW)
+            }
+            canvas.clipPath(clip)
+        }
+        // Scenery is pixel art and is kept crisp; Showdown's battlefields are painted and are
+        // smoothed.
+        val paint = if (pixelArt) Paint() else Paint(Paint.FILTER_BITMAP_FLAG or Paint.ANTI_ALIAS_FLAG)
+        if (mirrored) {
+            canvas.save()
+            canvas.scale(-1f, 1f, out.width / 2f, 0f)
+            canvas.drawBitmap(source, crop, bounds, paint)
+            canvas.restore()
+        } else {
+            canvas.drawBitmap(source, crop, bounds, paint)
+        }
+        return out
+    }
+
+    /** Packs frames left-to-right into one sheet so the disk cache is a single file. */
+    fun toSheet(frames: List<Bitmap>): Bitmap {
+        require(frames.isNotEmpty()) { "no frames to pack" }
+        val w = frames[0].width
+        val h = frames[0].height
+        val sheet = Bitmap.createBitmap(w * frames.size, h, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(sheet)
+        frames.forEachIndexed { i, frame -> canvas.drawBitmap(frame, (i * w).toFloat(), 0f, null) }
+        return sheet
+    }
+
+    /** Splits a sheet produced by [toSheet] back into [count] frames. */
+    fun fromSheet(sheet: Bitmap, count: Int): List<Bitmap> {
+        require(count > 0) { "count must be positive" }
+        val w = sheet.width / count
+        return (0 until count).map { i ->
+            Bitmap.createBitmap(sheet, i * w, 0, w, sheet.height)
+        }
+    }
+}
+
+
+
+

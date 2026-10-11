@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The launcher icon deliberately stays dark: its foreground is a red-and-white
+         Minecraft entity, which disappears on either the app red or the app cream. -->
+    <color name="ic_launcher_background">#101318</color>
+    <!-- Matches Paper in ui/theme/Color.kt. Used as the window background so a cold
+         start flashes the app's own stock rather than the platform's white or grey. -->
+    <color name="poke_paper">#F0F0F0</color>
+</resources>
+
