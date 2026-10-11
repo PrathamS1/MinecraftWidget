@@ -16,19 +16,17 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.BatteryChargingFull
-import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Layers
-import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.Storage
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material.icons.filled.Widgets
@@ -45,7 +43,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalClipboardManager
@@ -58,22 +55,20 @@ import com.example.minecraftwidget.BuildConfig
 import com.example.minecraftwidget.ui.components.MinecraftButton
 import com.example.minecraftwidget.ui.components.MinecraftIconButton
 import com.example.minecraftwidget.ui.theme.CreeperGreen
-import com.example.minecraftwidget.ui.theme.DiamondBlue
 import com.example.minecraftwidget.ui.theme.Obsidian
 import com.example.minecraftwidget.ui.theme.ObsidianSoft
+import com.example.minecraftwidget.ui.theme.StoneChalk
+import com.example.minecraftwidget.ui.theme.StoneDark
+import com.example.minecraftwidget.ui.theme.StoneLight
 
-// Authentic Minecraft GUI Colors
-private val McBgDark = Color(0xFF1E1E1F)          // Deep slate/bedrock background
-private val McHeaderBar = Color(0xFF181819)        // Top bar
-private val McSectionHeader = Color(0xFF262628)    // Section banner background
-private val McBorderDark = Color(0xFF111112)       // Outer bevel/border
-private val McBorderHighlight = Color(0xFF3C3C40)  // Highlight edge
-private val McRowHover = Color(0xFF2B2B2E)         // Row hover/active
-private val McTextYellow = Color(0xFFFFE043)       // Minecraft button yellow / title highlight
-private val McTextGreen = Color(0xFF55FF55)        // Minecraft emerald text green
-private val McTextAqua = Color(0xFF55FFFF)         // Minecraft diamond aqua
-private val McTextMuted = Color(0xFFAAAAAA)        // Muted gray
-private val McDivider = Color(0xFF333336)          // Inset horizontal divider
+// Light Mode Stone Palette
+private val LightBg = Color(0xFFF4F4F4)            // Clean light stone background
+private val LightHeaderBar = Color(0xFFE8E8E8)      // Header bar stone tone
+private val LightSectionHeader = Color(0xFFDEDEDE)  // Section banner background
+private val LightDivider = Color(0xFFDDDDDD)        // Soft gray divider line
+private val LightBadgeBg = Color(0xFFE2E2E2)        // Soft badge pill background
+private val LightBadgeBorder = Color(0xFFC0C0C0)    // Muted badge border
+private val AccentGreen = CreeperGreen              // Single cohesive accent green
 
 @Composable
 fun SettingsScreen(
@@ -90,11 +85,11 @@ fun SettingsScreen(
     Column(
         Modifier
             .fillMaxSize()
-            .background(McBgDark)
+            .background(LightBg)
             .statusBarsPadding(),
     ) {
-        // Minecraft Header Bar
-        MinecraftGuiTopBar(title = "OPTIONS & SETTINGS", onBack = onBack)
+        // Light Mode Header Top Bar
+        LightGuiTopBar(title = "Settings", onBack = onBack)
 
         Column(
             Modifier
@@ -103,36 +98,36 @@ fun SettingsScreen(
                 .navigationBarsPadding(),
         ) {
             if (message != null) {
-                MinecraftBannerNotice(message)
+                LightBannerNotice(message)
             }
 
-            // 1. WIDGETS SECTION
-            MinecraftSectionHeader(title = "ACTIVE WIDGETS", icon = Icons.Default.Widgets)
-            MinecraftSettingRow(
+            // 1. ACTIVE WIDGETS
+            LightSectionHeader(title = "ACTIVE WIDGETS", icon = Icons.Default.Widgets)
+            LightSettingRow(
                 title = "Widgets on Launcher",
                 subtitle = if (placedCount > 0) {
-                    "$placedCount active widget(s) running on your home screen. Tap any widget to trigger its configured action."
+                    "$placedCount active widget(s) currently placed on your home screen. Tap any widget to trigger its configured action."
                 } else {
-                    "No widgets placed. Long-press launcher or tap any mob in browse to place."
+                    "No widgets placed yet. Long-press launcher or select a mob from the browse tab to add."
                 },
                 trailing = {
-                    MinecraftStatBadge(
+                    LightStatBadge(
                         text = "$placedCount Placed",
-                        color = if (placedCount > 0) McTextGreen else McTextMuted,
+                        highlight = placedCount > 0,
                     )
                 },
             )
 
-            // 2. STORAGE & ASSETS SECTION
-            MinecraftSectionHeader(title = "STORAGE & ASSETS", icon = Icons.Default.Storage)
-            MinecraftSettingRow(
+            // 2. STORAGE & ASSETS
+            LightSectionHeader(title = "STORAGE & ASSETS", icon = Icons.Default.Storage)
+            LightSettingRow(
                 title = "Local Asset Storage",
                 subtitle = "All mob sprite sheets, frame tables, and sound effects are bundled locally in the app APK. Zero internet connection or network download required.",
                 trailing = {
-                    MinecraftStatBadge(text = "100% Offline", color = McTextAqua)
+                    LightStatBadge(text = "100% Offline", highlight = true)
                 },
             )
-            MinecraftSettingRow(
+            LightSettingRow(
                 title = "Temporary Cache",
                 subtitle = "Render cache for home screen RemoteViews: %.2f MB".format(cacheBytes / 1_048_576.0),
                 trailing = {
@@ -141,75 +136,76 @@ fun SettingsScreen(
                             text = "Clear",
                             onClick = onClearCache,
                             icon = Icons.Default.Delete,
-                            container = Color(0xFF8B2020),
+                            container = StoneChalk,
                         )
                     } else {
                         Text(
                             text = "0.0 MB",
                             style = MaterialTheme.typography.bodySmall,
-                            color = McTextMuted,
+                            color = ObsidianSoft,
                         )
                     }
                 },
             )
 
-            // 3. ENGINE & BATTERY SECTION
-            MinecraftSectionHeader(title = "PERFORMANCE & BATTERY", icon = Icons.Default.BatteryChargingFull)
-            MinecraftSettingRow(
+            // 3. PERFORMANCE & BATTERY
+            LightSectionHeader(title = "PERFORMANCE & BATTERY", icon = Icons.Default.BatteryChargingFull)
+            LightSettingRow(
                 title = "Zero Wake Locks",
                 subtitle = "Powered directly by native RemoteViews and ViewFlipper. No background services run while your device is asleep or screen is turned off.",
                 trailing = {
                     Icon(
-                        Icons.Default.CheckCircle,
+                        Icons.Default.Check,
                         contentDescription = null,
-                        tint = McTextGreen,
+                        tint = AccentGreen,
                         modifier = Modifier.size(20.dp),
                     )
                 },
             )
-            MinecraftSettingRow(
+            LightSettingRow(
                 title = "Frame Rate Pruning",
                 subtitle = "Animations are pruned to ~10–14 FPS for classic pixel-art authenticity while staying well below Android's IPC memory limits.",
                 trailing = {
-                    MinecraftStatBadge(text = "10-14 FPS", color = McTextYellow)
+                    LightStatBadge(text = "10-14 FPS", highlight = false)
                 },
             )
 
-            // 4. INTERACTION SYSTEM
-            MinecraftSectionHeader(title = "TAP INTERACTIONS", icon = Icons.Default.TouchApp)
-            MinecraftSettingRow(
+            // 4. TAP INTERACTIONS
+            LightSectionHeader(title = "TAP INTERACTIONS", icon = Icons.Default.TouchApp)
+            LightSettingRow(
                 title = "Sound Effect",
-                subtitle = "Plays authentic mob cries, hurt, ambient, or step sound effects immediately via low-latency SoundPool.",
+                subtitle = "Plays authentic mob cries, ambient noises, or step sounds immediately via low-latency SoundPool.",
             )
-            MinecraftSettingRow(
+            LightSettingRow(
                 title = "Play Animation",
                 subtitle = "Triggers the entity's complete sprite sheet animation sequence once upon tapping.",
             )
-            MinecraftSettingRow(
+            LightSettingRow(
                 title = "Physical Wobble",
                 subtitle = "Applies a playful squash-and-stretch wobble motion to static or animated mobs.",
             )
 
             // 5. DIAGNOSTICS (if crash exists)
             if (crashReport != null) {
-                MinecraftSectionHeader(title = "DIAGNOSTICS & CRASH LOG", icon = Icons.Default.Info)
-                MinecraftCrashSection(crashReport = crashReport, onClear = onClearCrash)
+                LightSectionHeader(title = "DIAGNOSTICS & CRASH LOG", icon = Icons.Default.Info)
+                LightCrashSection(crashReport = crashReport, onClear = onClearCrash)
             }
 
-            // 6. ABOUT & LEGAL SECTION
-            MinecraftSectionHeader(title = "ABOUT MINECRAFTWIDGET", icon = Icons.Default.Layers)
-            MinecraftSettingRow(
+            // 6. ABOUT & LEGAL
+            LightSectionHeader(title = "ABOUT MINECRAFTWIDGET", icon = Icons.Default.Layers)
+            LightSettingRow(
                 title = "App Version",
                 subtitle = "Version ${BuildConfig.VERSION_NAME} (Open-Source GitHub Edition)",
                 trailing = {
                     Text(
                         text = "v${BuildConfig.VERSION_NAME}",
                         style = MaterialTheme.typography.labelMedium,
-                        color = McTextYellow,
+                        color = Obsidian,
+                        fontWeight = FontWeight.SemiBold,
                     )
                 },
             )
-            MinecraftSettingRow(
+            LightSettingRow(
                 title = "Legal Disclaimer",
                 subtitle = "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT. Minecraft is a trademark of Mojang Synergies AB / Microsoft.",
             )
@@ -220,18 +216,18 @@ fun SettingsScreen(
 }
 
 /**
- * Top bar inspired by Minecraft GUI header styling with carved stone outline.
+ * Top bar styled in clean light stone with subtle border.
  */
 @Composable
-private fun MinecraftGuiTopBar(
+private fun LightGuiTopBar(
     title: String,
     onBack: () -> Unit,
 ) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(McHeaderBar)
-            .minecraftBevel(raised = false)
+            .background(LightHeaderBar)
+            .lightStoneBevel(raised = false)
             .padding(horizontal = 12.dp, vertical = 10.dp),
     ) {
         Row(
@@ -243,12 +239,12 @@ private fun MinecraftGuiTopBar(
                 icon = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Back",
                 onClick = onBack,
-                container = Color(0xFF3C3C40),
+                container = Color.White,
             )
             Text(
                 text = title,
                 style = MaterialTheme.typography.titleMedium,
-                color = McTextYellow,
+                color = Obsidian,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -258,19 +254,19 @@ private fun MinecraftGuiTopBar(
 }
 
 /**
- * Minecraft section banner header spanning edge to edge.
+ * Section banner header spanning edge to edge in light tone.
  */
 @Composable
-private fun MinecraftSectionHeader(
+private fun LightSectionHeader(
     title: String,
     icon: ImageVector? = null,
 ) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(McSectionHeader)
-            .minecraftBevel(raised = true)
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            .background(LightSectionHeader)
+            .lightStoneBevel(raised = true)
+            .padding(horizontal = 16.dp, vertical = 9.dp),
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -280,26 +276,26 @@ private fun MinecraftSectionHeader(
                 Icon(
                     icon,
                     contentDescription = null,
-                    tint = McTextYellow,
+                    tint = Obsidian,
                     modifier = Modifier.size(16.dp),
                 )
             }
             Text(
                 text = title,
                 style = MaterialTheme.typography.labelLarge,
-                color = McTextYellow,
+                color = Obsidian,
                 fontWeight = FontWeight.Bold,
-                letterSpacing = 1.sp,
+                letterSpacing = 0.5.sp,
             )
         }
     }
 }
 
 /**
- * Flat, list-based setting item row with subtle separators and hover/press states.
+ * Flat list-based setting item row in light mode.
  */
 @Composable
-private fun MinecraftSettingRow(
+private fun LightSettingRow(
     title: String,
     subtitle: String,
     modifier: Modifier = Modifier,
@@ -310,8 +306,8 @@ private fun MinecraftSettingRow(
         modifier = modifier
             .fillMaxWidth()
             .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
-            .background(McBgDark)
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .background(LightBg)
+            .padding(horizontal = 16.dp, vertical = 13.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -322,72 +318,76 @@ private fun MinecraftSettingRow(
                 Text(
                     text = title,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Color.White,
+                    color = Obsidian,
                     fontWeight = FontWeight.SemiBold,
                 )
                 Spacer(Modifier.height(3.dp))
                 Text(
                     text = subtitle,
                     style = MaterialTheme.typography.bodySmall,
-                    color = McTextMuted,
-                    lineHeight = 16.sp,
+                    color = ObsidianSoft,
+                    lineHeight = 17.sp,
                 )
             }
             trailing?.invoke()
         }
     }
-    HorizontalDivider(color = McDivider, thickness = 1.dp)
+    HorizontalDivider(color = LightDivider, thickness = 1.dp)
 }
 
 /**
- * Stat badge styled like a Minecraft UI pill.
+ * Minimalist stat badge in light theme using neutral stone and optional accent green.
  */
 @Composable
-private fun MinecraftStatBadge(
+private fun LightStatBadge(
     text: String,
-    color: Color,
+    highlight: Boolean = false,
 ) {
     Box(
         modifier = Modifier
-            .background(Color(0xFF141416), RoundedCornerShape(2.dp))
-            .border(1.dp, color.copy(alpha = 0.5f), RoundedCornerShape(2.dp))
+            .background(if (highlight) AccentGreen.copy(alpha = 0.12f) else LightBadgeBg, RoundedCornerShape(3.dp))
+            .border(
+                1.dp,
+                if (highlight) AccentGreen.copy(alpha = 0.5f) else LightBadgeBorder,
+                RoundedCornerShape(3.dp)
+            )
             .padding(horizontal = 8.dp, vertical = 4.dp),
         contentAlignment = Alignment.Center,
     ) {
         Text(
             text = text,
             style = MaterialTheme.typography.labelSmall,
-            color = color,
+            color = if (highlight) AccentGreen else Obsidian,
             fontWeight = FontWeight.Bold,
         )
     }
 }
 
 /**
- * Notice banner with Minecraft gold text.
+ * Informational notice banner in light neutral tone.
  */
 @Composable
-private fun MinecraftBannerNotice(message: String) {
+private fun LightBannerNotice(message: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color(0xFF2E2412))
-            .border(1.dp, Color(0xFF856404))
+            .background(LightHeaderBar)
+            .border(1.dp, LightDivider)
             .padding(14.dp),
     ) {
         Text(
             text = message,
             style = MaterialTheme.typography.bodySmall,
-            color = McTextYellow,
+            color = Obsidian,
         )
     }
 }
 
 /**
- * Diagnostic crash reporting box in Minecraft terminal style.
+ * Diagnostic crash reporting box in light mode.
  */
 @Composable
-private fun MinecraftCrashSection(
+private fun LightCrashSection(
     crashReport: String,
     onClear: () -> Unit,
 ) {
@@ -397,26 +397,26 @@ private fun MinecraftCrashSection(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color(0xFF161618))
+            .background(LightBg)
             .padding(16.dp),
     ) {
         Text(
             text = "An unexpected termination was logged on the previous run:",
             style = MaterialTheme.typography.bodySmall,
-            color = Color.White,
+            color = Obsidian,
         )
         Spacer(Modifier.height(8.dp))
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color.Black)
-                .border(1.dp, Color(0xFF444448))
+                .background(Color(0xFFEEEEEE))
+                .border(1.dp, LightDivider)
                 .padding(10.dp),
         ) {
             Text(
                 text = crashReport.lineSequence().take(6).joinToString("\n"),
                 style = MaterialTheme.typography.bodySmall,
-                color = Color(0xFFFF5555), // Minecraft Red
+                color = Obsidian,
                 maxLines = 6,
                 overflow = TextOverflow.Ellipsis,
             )
@@ -430,34 +430,34 @@ private fun MinecraftCrashSection(
                     copied = true
                 },
                 icon = Icons.Default.ContentCopy,
-                container = Color(0xFF3C3C40),
+                container = Color.White,
             )
             MinecraftButton(
                 text = "Clear",
                 onClick = onClear,
-                container = Color(0xFF8B2020),
+                container = StoneChalk,
             )
         }
     }
-    HorizontalDivider(color = McDivider, thickness = 1.dp)
+    HorizontalDivider(color = LightDivider, thickness = 1.dp)
 }
 
 /**
- * Draws a subtle beveled border typical of Minecraft GUI stone blocks.
+ * Subtle border bevel lines for light stone aesthetic.
  */
-private fun Modifier.minecraftBevel(raised: Boolean = true): Modifier = drawBehind {
-    val strokeWidth = 2.dp.toPx()
-    val topColor = if (raised) Color(0xFF4A4A50) else Color(0xFF101012)
-    val bottomColor = if (raised) Color(0xFF101012) else Color(0xFF4A4A50)
+private fun Modifier.lightStoneBevel(raised: Boolean = true): Modifier = drawBehind {
+    val strokeWidth = 1.5.dp.toPx()
+    val topColor = if (raised) Color(0xFFF7F7F7) else Color(0xFFD0D0D0)
+    val bottomColor = if (raised) Color(0xFFD0D0D0) else Color(0xFFF7F7F7)
 
-    // Top border
+    // Top border line
     drawLine(
         color = topColor,
         start = Offset(0f, strokeWidth / 2),
         end = Offset(size.width, strokeWidth / 2),
         strokeWidth = strokeWidth,
     )
-    // Bottom border
+    // Bottom border line
     drawLine(
         color = bottomColor,
         start = Offset(0f, size.height - strokeWidth / 2),
