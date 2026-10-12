@@ -60,31 +60,6 @@ fun EntityDetailScreen(
             .fillMaxSize()
             .dottedPaper()
     ) {
-        // Top Header
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .statusBarsPadding()
-                .padding(horizontal = 16.dp, vertical = 10.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            MinecraftIconButton(Icons.AutoMirrored.Filled.ArrowBack, "Back", onBack)
-            
-            Text(
-                text = entry.name,
-                style = MaterialTheme.typography.headlineMedium,
-                color = Obsidian,
-                modifier = Modifier.weight(1f).padding(horizontal = 16.dp),
-                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-            
-            // Empty placeholder for balance
-            Spacer(Modifier.size(48.dp))
-        }
-
-        // Hero Sprite in the Center with upper ambient glow matched to entity
         val hero = sets.find { it.set.id == selected } ?: sets.firstOrNull()
         val entityColor = entityAmbienceColor(entry)
         val ambientColor = if (showBackground) {
@@ -92,55 +67,87 @@ fun EntityDetailScreen(
         } else {
             entityColor.copy(alpha = 0.28f)
         }
-        
+
+        // Top Header and Hero Area with seamless ambient glow extending to top edge
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(240.dp)
                 .background(
                     androidx.compose.ui.graphics.Brush.radialGradient(
                         colors = listOf(ambientColor, androidx.compose.ui.graphics.Color.Transparent),
-                        radius = 450f
+                        radius = 650f
                     )
-                ),
-            contentAlignment = Alignment.Center
-        ) {
-
-            if (hero != null) {
-                var hops by remember(entry.id) { mutableStateOf(0) }
-                val interactions = remember { MutableInteractionSource() }
-                
-                // Shaped background directly behind entity
-                if (showBackground) {
-                    val shape = when (backgroundShape) {
-                        BackgroundShape.SQUARE -> androidx.compose.foundation.shape.RoundedCornerShape(0.dp)
-                        BackgroundShape.ROUNDED -> androidx.compose.foundation.shape.RoundedCornerShape(cornerRadiusDp.coerceAtLeast(16).dp)
-                        BackgroundShape.CIRCLE -> androidx.compose.foundation.shape.CircleShape
-                        BackgroundShape.BLOB -> BlobShape
-                    }
-                    Box(
-                        modifier = Modifier
-                            .size(160.dp)
-                            .clip(shape)
-                            .background(androidx.compose.ui.graphics.Color(backgroundColor))
-                    )
-                }
-                
-                SpriteImage(
-                    hero.url,
-                    entry.displayName,
-                    Modifier
-                        .size(160.dp)
-                        .pressScale(interactions)
-                        .tapWobble(hops)
-                        .clickable(interactionSource = interactions, indication = null) {
-                            hops++
-                            onPlayCry(entry.id)
-                        },
-                    spriteSet = hero.set
                 )
-            } else {
-                EntityIcon(entry.id, entry.displayName, size = 160.dp)
+        ) {
+            Column(Modifier.fillMaxWidth()) {
+                // Top Header Row
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .statusBarsPadding()
+                        .padding(horizontal = 16.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    MinecraftIconButton(Icons.AutoMirrored.Filled.ArrowBack, "Back", onBack)
+                    
+                    Text(
+                        text = entry.name,
+                        style = MaterialTheme.typography.headlineMedium,
+                        color = Obsidian,
+                        modifier = Modifier.weight(1f).padding(horizontal = 16.dp),
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    
+                    // Empty placeholder for balance
+                    Spacer(Modifier.size(48.dp))
+                }
+
+                // Hero Sprite Center Box
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(240.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    if (hero != null) {
+                        var hops by remember(entry.id) { mutableStateOf(0) }
+                        val interactions = remember { MutableInteractionSource() }
+                        
+                        // Shaped background directly behind entity
+                        if (showBackground) {
+                            val shape = when (backgroundShape) {
+                                BackgroundShape.SQUARE -> androidx.compose.foundation.shape.RoundedCornerShape(0.dp)
+                                BackgroundShape.ROUNDED -> androidx.compose.foundation.shape.RoundedCornerShape(cornerRadiusDp.coerceAtLeast(16).dp)
+                                BackgroundShape.CIRCLE -> androidx.compose.foundation.shape.CircleShape
+                                BackgroundShape.BLOB -> BlobShape
+                            }
+                            Box(
+                                modifier = Modifier
+                                    .size(160.dp)
+                                    .clip(shape)
+                                    .background(androidx.compose.ui.graphics.Color(backgroundColor))
+                            )
+                        }
+                        
+                        SpriteImage(
+                            hero.url,
+                            entry.displayName,
+                            Modifier
+                                .size(160.dp)
+                                .pressScale(interactions)
+                                .tapWobble(hops)
+                                .clickable(interactionSource = interactions, indication = null) {
+                                    hops++
+                                    onPlayCry(entry.id)
+                                },
+                            spriteSet = hero.set
+                        )
+                    } else {
+                        EntityIcon(entry.id, entry.displayName, size = 160.dp)
+                    }
+                }
             }
         }
 

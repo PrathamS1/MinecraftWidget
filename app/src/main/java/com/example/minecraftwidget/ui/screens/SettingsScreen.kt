@@ -191,7 +191,28 @@ fun SettingsScreen(
                 LightCrashSection(crashReport = crashReport, onClear = onClearCrash)
             }
 
-            // 6. ABOUT & LEGAL
+            // 6. COMMUNITY & SUPPORT
+            val context = androidx.compose.ui.platform.LocalContext.current
+            LightSectionHeader(title = "COMMUNITY & SUPPORT", icon = Icons.Default.Info)
+            LightSettingRow(
+                title = "Discord Community",
+                subtitle = "Join our Discord server to request new mobs, share your home screen setups, and get help directly from the developer.",
+                trailing = {
+                    MinecraftButton(
+                        text = "Join",
+                        onClick = {
+                            val intent = android.content.Intent(
+                                android.content.Intent.ACTION_VIEW,
+                                android.net.Uri.parse(com.example.minecraftwidget.Links.DISCORD_INVITE)
+                            )
+                            context.startActivity(intent)
+                        },
+                        container = AccentGreen,
+                    )
+                },
+            )
+
+            // 7. ABOUT & LEGAL
             LightSectionHeader(title = "ABOUT MINECRAFTWIDGET", icon = Icons.Default.Layers)
             LightSettingRow(
                 title = "App Version",

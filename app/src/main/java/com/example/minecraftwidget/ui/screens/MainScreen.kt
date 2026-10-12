@@ -90,6 +90,7 @@ fun MainScreen(
     onPlayCry: (Int) -> Unit,
 ) {
     var showSettings by remember { mutableStateOf(false) }
+    val browseGridState = androidx.compose.foundation.lazy.grid.rememberLazyGridState()
     val detail = state.detail
     val editingWidget = state.editingWidget
 
@@ -124,6 +125,7 @@ fun MainScreen(
                 Box(modifier = Modifier.fillMaxSize().padding(bottom = 76.dp)) {
                     BrowseScreen(
                         state = state,
+                        gridState = browseGridState,
                         onQuery = onQuery,
                         onCategory = onCategory,
                         onAnimatedOnly = onAnimatedOnly,
@@ -239,14 +241,13 @@ fun MinecraftHotbar(
 @Composable
 private fun BrowseScreen(
     state: MainUiState,
+    gridState: androidx.compose.foundation.lazy.grid.LazyGridState,
     onQuery: (String) -> Unit,
     onCategory: (String?) -> Unit,
     onAnimatedOnly: (Boolean) -> Unit,
     onOpenDetail: (MinecraftEntity) -> Unit,
     onOpenSettings: () -> Unit,
 ) {
-    val gridState = androidx.compose.foundation.lazy.grid.rememberLazyGridState()
-
     Box(modifier = Modifier.fillMaxSize()) {
         Box(
             Modifier
