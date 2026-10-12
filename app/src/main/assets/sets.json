@@ -1,1559 +1,1649 @@
 {
-    "sets":  [
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/allay/Allay_Dancing_sheet_15f_4c.png",
-                     "frameCount":  15,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  1,
-                     "label":  "Allay Dancing",
-                     "variants":  {
-                                      "":  "1"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  131,
-                     "frameWidth":  150,
-                     "id":  "allay_allay_dancing",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/axolotl/Axolotl_Idle_Floor_sheet_16f_4c.png",
-                     "frameCount":  16,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  2,
-                     "label":  "Axolotl Idle Floor",
-                     "variants":  {
-                                      "":  "2"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  96,
-                     "frameWidth":  150,
-                     "id":  "axolotl_axolotl_idle_floor",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/axolotl/Axolotl_Swim_sheet_22f_5c.png",
-                     "frameCount":  22,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  3,
-                     "label":  "Axolotl Swim",
-                     "variants":  {
-                                      "":  "2"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  96,
-                     "frameWidth":  150,
-                     "id":  "axolotl_axolotl_swim",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/axolotl/Axolotl_Walk_Floor_Underwater_sheet_23f_5c.png",
-                     "frameCount":  23,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  4,
-                     "label":  "Axolotl Walk Floor Underwater",
-                     "variants":  {
-                                      "":  "2"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  96,
-                     "frameWidth":  150,
-                     "id":  "axolotl_axolotl_walk_floor_underwater",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/bat/Bat_sheet_19f_5c.png",
-                     "frameCount":  19,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  5,
-                     "label":  "Bat",
-                     "variants":  {
-                                      "":  "3"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "bat_bat",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/bee/Bee_29_BE_sheet_15f_4c.png",
-                     "frameCount":  15,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  6,
-                     "label":  "Bee 29 BE",
-                     "variants":  {
-                                      "":  "4"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "bee_bee_29_be",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/bee/Bee_sheet_21f_5c.png",
-                     "frameCount":  21,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  7,
-                     "label":  "Bee",
-                     "variants":  {
-                                      "":  "4"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "bee_bee",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/blaze/Blaze_sheet_17f_5c.png",
-                     "frameCount":  17,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  8,
-                     "label":  "Blaze",
-                     "variants":  {
-                                      "":  "5"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  300,
-                     "frameWidth":  150,
-                     "id":  "blaze_blaze",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/blaze/Blaze_Shooting_sheet_17f_5c.png",
-                     "frameCount":  17,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  9,
-                     "label":  "Blaze Shooting",
-                     "variants":  {
-                                      "":  "5"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  180,
-                     "frameWidth":  150,
-                     "id":  "blaze_blaze_shooting",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_baby_tuxedo_cat",
-                     "order":  10,
-                     "animated":  false,
-                     "label":  "Baby Tuxedo Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Baby_Tuxedo_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_black_cat",
-                     "order":  11,
-                     "animated":  false,
-                     "label":  "Black Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Black_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_british_shorthair_cat",
-                     "order":  12,
-                     "animated":  false,
-                     "label":  "British Shorthair Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/British_Shorthair_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_calico_cat",
-                     "order":  13,
-                     "animated":  false,
-                     "label":  "Calico Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Calico_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_jellie_cat",
-                     "order":  14,
-                     "animated":  false,
-                     "label":  "Jellie Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Jellie_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_persian_cat",
-                     "order":  15,
-                     "animated":  false,
-                     "label":  "Persian Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Persian_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_red_cat",
-                     "order":  16,
-                     "animated":  false,
-                     "label":  "Red Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Red_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_siamese_cat_je3",
-                     "order":  17,
-                     "animated":  false,
-                     "label":  "Siamese Cat JE3",
-                     "gen":  1,
-                     "path":  "mobs/cat/Siamese_Cat_JE3.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_tabby_cat",
-                     "order":  18,
-                     "animated":  false,
-                     "label":  "Tabby Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Tabby_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_tamed_cat",
-                     "order":  19,
-                     "animated":  false,
-                     "label":  "Tamed Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/Tamed_cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_tuxedo_cat_je2_be2",
-                     "order":  20,
-                     "animated":  false,
-                     "label":  "Tuxedo Cat JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/cat/Tuxedo_Cat_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "6"
-                                  },
-                     "id":  "cat_white_cat",
-                     "order":  21,
-                     "animated":  false,
-                     "label":  "White Cat",
-                     "gen":  1,
-                     "path":  "mobs/cat/White_Cat.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/chicken/Chicken_Flapping_sheet_8f_3c.png",
-                     "frameCount":  8,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  22,
-                     "label":  "Chicken Flapping",
-                     "variants":  {
-                                      "":  "7"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  160,
-                     "frameWidth":  150,
-                     "id":  "chicken_chicken_flapping",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "7"
-                                  },
-                     "id":  "chicken_chicken_jockey",
-                     "order":  23,
-                     "animated":  false,
-                     "label":  "Chicken Jockey",
-                     "gen":  1,
-                     "path":  "mobs/chicken/Chicken_Jockey.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/creeper/Charged_Creeper_Animated_sheet_13f_4c.png",
-                     "frameCount":  13,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  24,
-                     "label":  "Charged Creeper Animated",
-                     "variants":  {
-                                      "":  "8"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  314,
-                     "frameWidth":  150,
-                     "id":  "creeper_charged_creeper_animated",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/dolphin/Dolphin_sheet_20f_5c.png",
-                     "frameCount":  20,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  25,
-                     "label":  "Dolphin",
-                     "variants":  {
-                                      "":  "9"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  98,
-                     "frameWidth":  150,
-                     "id":  "dolphin_dolphin",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "10"
-                                  },
-                     "id":  "enderman_enderman_be",
-                     "order":  26,
-                     "animated":  false,
-                     "label":  "Enderman BE",
-                     "gen":  1,
-                     "path":  "mobs/enderman/Enderman_BE.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/enderman/Enderman_Screaming_sheet_13f_4c.png",
-                     "frameCount":  13,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  27,
-                     "label":  "Enderman Screaming",
-                     "variants":  {
-                                      "":  "10"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "enderman_enderman_screaming",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/ender_dragon/Ender_Dragon_sheet_13f_4c.png",
-                     "frameCount":  13,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  28,
-                     "label":  "Ender Dragon",
-                     "variants":  {
-                                      "":  "11"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  153,
-                     "frameWidth":  150,
-                     "id":  "ender_dragon_ender_dragon",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/evoker/Evoker_celebrating_sheet_24f_5c.png",
-                     "frameCount":  24,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  29,
-                     "label":  "Evoker Celebrating",
-                     "variants":  {
-                                      "":  "12"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  366,
-                     "frameWidth":  150,
-                     "id":  "evoker_evoker_celebrating",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/fire/Campfire_JE2_BE2_sheet_20f_5c.png",
-                     "frameCount":  20,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  30,
-                     "label":  "Campfire JE2 BE2",
-                     "variants":  {
-                                      "":  "13"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "fire_campfire_je2_be2",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/fire/Fire_BE_sheet_16f_4c.png",
-                     "frameCount":  16,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  31,
-                     "label":  "Fire BE",
-                     "variants":  {
-                                      "":  "13"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  164,
-                     "frameWidth":  150,
-                     "id":  "fire_fire_be",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/fire/Soul_Fire_JE1_sheet_16f_4c.png",
-                     "frameCount":  16,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  32,
-                     "label":  "Soul Fire JE1",
-                     "variants":  {
-                                      "":  "13"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  164,
-                     "frameWidth":  150,
-                     "id":  "fire_soul_fire_je1",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "14"
-                                  },
-                     "id":  "fox_baby_fox",
-                     "order":  33,
-                     "animated":  false,
-                     "label":  "Baby Fox",
-                     "gen":  1,
-                     "path":  "mobs/fox/Baby_Fox.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "14"
-                                  },
-                     "id":  "fox_baby_snow_fox",
-                     "order":  34,
-                     "animated":  false,
-                     "label":  "Baby Snow Fox",
-                     "gen":  1,
-                     "path":  "mobs/fox/Baby_Snow_Fox.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "14"
-                                  },
-                     "id":  "fox_fox",
-                     "order":  35,
-                     "animated":  false,
-                     "label":  "Fox",
-                     "gen":  1,
-                     "path":  "mobs/fox/Fox.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "14"
-                                  },
-                     "id":  "fox_snow_fox",
-                     "order":  36,
-                     "animated":  false,
-                     "label":  "Snow Fox",
-                     "gen":  1,
-                     "path":  "mobs/fox/Snow_Fox.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/frog/Swamp_Frog_Walking_sheet_16f_4c.png",
-                     "frameCount":  16,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  37,
-                     "label":  "Swamp Frog Walking",
-                     "variants":  {
-                                      "":  "15"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  113,
-                     "frameWidth":  150,
-                     "id":  "frog_swamp_frog_walking",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/frog/Temperate_Frog_JE1_BE1_sheet_23f_5c.png",
-                     "frameCount":  23,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  38,
-                     "label":  "Temperate Frog JE1 BE1",
-                     "variants":  {
-                                      "":  "15"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  113,
-                     "frameWidth":  150,
-                     "id":  "frog_temperate_frog_je1_be1",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/frog/Tropical_Frog_Walking_sheet_16f_4c.png",
-                     "frameCount":  16,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  39,
-                     "label":  "Tropical Frog Walking",
-                     "variants":  {
-                                      "":  "15"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  113,
-                     "frameWidth":  150,
-                     "id":  "frog_tropical_frog_walking",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/ghast/Ghast_JE2_BE2_sheet_14f_5c.png",
-                     "frameCount":  14,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  40,
-                     "label":  "Ghast JE2 BE2",
-                     "variants":  {
-                                      "":  "16"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  189,
-                     "frameWidth":  150,
-                     "id":  "ghast_ghast_je2_be2",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "16"
-                                  },
-                     "id":  "ghast_ghast_shooting_je2_be2",
-                     "order":  41,
-                     "animated":  false,
-                     "label":  "Ghast Shooting JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/ghast/Ghast_shooting_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "17"
-                                  },
-                     "id":  "hoglin_baby_hoglin_je6",
-                     "order":  42,
-                     "animated":  false,
-                     "label":  "Baby Hoglin JE6",
-                     "gen":  1,
-                     "path":  "mobs/hoglin/Baby_Hoglin_JE6.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/hoglin/Hoglin_being_Zombified_sheet_20f_5c.png",
-                     "frameCount":  20,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  43,
-                     "label":  "Hoglin Being Zombified",
-                     "variants":  {
-                                      "":  "17"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  117,
-                     "frameWidth":  150,
-                     "id":  "hoglin_hoglin_being_zombified",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "17"
-                                  },
-                     "id":  "hoglin_hoglin_je3",
-                     "order":  44,
-                     "animated":  false,
-                     "label":  "Hoglin JE3",
-                     "gen":  1,
-                     "path":  "mobs/hoglin/Hoglin_JE3.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "18"
-                                  },
-                     "id":  "illusioner_illusioner_casting",
-                     "order":  45,
-                     "animated":  false,
-                     "label":  "Illusioner Casting",
-                     "gen":  1,
-                     "path":  "mobs/illusioner/Illusioner_Casting.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "18"
-                                  },
-                     "id":  "illusioner_illusioner_je3",
-                     "order":  46,
-                     "animated":  false,
-                     "label":  "Illusioner JE3",
-                     "gen":  1,
-                     "path":  "mobs/illusioner/Illusioner_JE3.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "19"
-                                  },
-                     "id":  "llama_creamy_llama",
-                     "order":  47,
-                     "animated":  false,
-                     "label":  "Creamy Llama",
-                     "gen":  1,
-                     "path":  "mobs/llama/Creamy_Llama.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/panda/Panda_Rolling_sheet_17f_5c.png",
-                     "frameCount":  17,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  48,
-                     "label":  "Panda Rolling",
-                     "variants":  {
-                                      "":  "20"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "panda_panda_rolling",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/panda/Panda_Unhappy_sheet_5f_5c.png",
-                     "frameCount":  5,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  49,
-                     "label":  "Panda Unhappy",
-                     "variants":  {
-                                      "":  "20"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  96,
-                     "frameWidth":  150,
-                     "id":  "panda_panda_unhappy",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/parrot/Dancing_Blue_Parrot_sheet_8f_3c.png",
-                     "frameCount":  8,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  50,
-                     "label":  "Dancing Blue Parrot",
-                     "variants":  {
-                                      "":  "21"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "parrot_dancing_blue_parrot",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/parrot/Dancing_Cyan_Parrot_sheet_8f_3c.png",
-                     "frameCount":  8,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  51,
-                     "label":  "Dancing Cyan Parrot",
-                     "variants":  {
-                                      "":  "21"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "parrot_dancing_cyan_parrot",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/parrot/Dancing_Gray_Parrot_sheet_8f_3c.png",
-                     "frameCount":  8,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  52,
-                     "label":  "Dancing Gray Parrot",
-                     "variants":  {
-                                      "":  "21"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "parrot_dancing_gray_parrot",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/parrot/Dancing_Green_Parrot_sheet_8f_3c.png",
-                     "frameCount":  8,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  53,
-                     "label":  "Dancing Green Parrot",
-                     "variants":  {
-                                      "":  "21"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "parrot_dancing_green_parrot",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/parrot/Dancing_Red_Parrot_sheet_8f_3c.png",
-                     "frameCount":  8,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  54,
-                     "label":  "Dancing Red Parrot",
-                     "variants":  {
-                                      "":  "21"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "parrot_dancing_red_parrot",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "22"
-                                  },
-                     "id":  "pig_baby_pig_je2_be2",
-                     "order":  55,
-                     "animated":  false,
-                     "label":  "Baby Pig JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/pig/Baby_Pig_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "22"
-                                  },
-                     "id":  "pig_pig_je3_be2",
-                     "order":  56,
-                     "animated":  false,
-                     "label":  "Pig JE3 BE2",
-                     "gen":  1,
-                     "path":  "mobs/pig/Pig_JE3_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/piglin/Piglin_celebrate_hunt_Revision_1_sheet_23f_5c.png",
-                     "frameCount":  23,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  57,
-                     "label":  "Piglin Celebrate Hunt Revision 1",
-                     "variants":  {
-                                      "":  "23"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  149,
-                     "frameWidth":  150,
-                     "id":  "piglin_piglin_celebrate_hunt_revision_1",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "24"
-                                  },
-                     "id":  "pillager_pillager_aiming_with_crossbow_be",
-                     "order":  58,
-                     "animated":  false,
-                     "label":  "Pillager Aiming With Crossbow BE",
-                     "gen":  1,
-                     "path":  "mobs/pillager/Pillager_Aiming_with_Crossbow_BE.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/pillager/Pillager_celebrating_BE_sheet_24f_5c.png",
-                     "frameCount":  24,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  59,
-                     "label":  "Pillager Celebrating BE",
-                     "variants":  {
-                                      "":  "24"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  211,
-                     "frameWidth":  150,
-                     "id":  "pillager_pillager_celebrating_be",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "25"
-                                  },
-                     "id":  "polar_bear_baby_polar_bear",
-                     "order":  60,
-                     "animated":  false,
-                     "label":  "Baby Polar Bear",
-                     "gen":  1,
-                     "path":  "mobs/polar_bear/Baby_Polar_Bear.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/polar_bear/Polar_Bear_attacking_sheet_15f_4c.png",
-                     "frameCount":  15,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  61,
-                     "label":  "Polar Bear Attacking",
-                     "variants":  {
-                                      "":  "25"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  184,
-                     "frameWidth":  150,
-                     "id":  "polar_bear_polar_bear_attacking",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "26"
-                                  },
-                     "id":  "rabbit_brown_rabbit_je2_be2",
-                     "order":  62,
-                     "animated":  false,
-                     "label":  "Brown Rabbit JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/rabbit/Brown_Rabbit_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/rabbit/Rabbit_running_sheet_18f_5c.png",
-                     "frameCount":  18,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  63,
-                     "label":  "Rabbit Running",
-                     "variants":  {
-                                      "":  "26"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  196,
-                     "frameWidth":  150,
-                     "id":  "rabbit_rabbit_running",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "26"
-                                  },
-                     "id":  "rabbit_toast_rabbit_je2_be2",
-                     "order":  64,
-                     "animated":  false,
-                     "label":  "Toast Rabbit JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/rabbit/Toast_Rabbit_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "26"
-                                  },
-                     "id":  "rabbit_white_rabbit_je2_be2",
-                     "order":  65,
-                     "animated":  false,
-                     "label":  "White Rabbit JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/rabbit/White_Rabbit_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "27"
-                                  },
-                     "id":  "ravager_ravager_be1",
-                     "order":  66,
-                     "animated":  false,
-                     "label":  "Ravager BE1",
-                     "gen":  1,
-                     "path":  "mobs/ravager/Ravager_BE1.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "27"
-                                  },
-                     "id":  "ravager_ravager_rider_29",
-                     "order":  67,
-                     "animated":  false,
-                     "label":  "Ravager Rider 29",
-                     "gen":  1,
-                     "path":  "mobs/ravager/Ravager_Rider_29.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "28"
-                                  },
-                     "id":  "sheep_baby_white_sheep_je3_be5",
-                     "order":  68,
-                     "animated":  false,
-                     "label":  "Baby White Sheep JE3 BE5",
-                     "gen":  1,
-                     "path":  "mobs/sheep/Baby_White_Sheep_JE3_BE5.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/sheep/Jeb_Sheep_JE2_sheet_24f_5c.png",
-                     "frameCount":  24,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  69,
-                     "label":  "Jeb Sheep JE2",
-                     "variants":  {
-                                      "":  "28"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  174,
-                     "frameWidth":  150,
-                     "id":  "sheep_jeb_sheep_je2",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "28"
-                                  },
-                     "id":  "sheep_white_sheep_je3_be6",
-                     "order":  70,
-                     "animated":  false,
-                     "label":  "White Sheep JE3 BE6",
-                     "gen":  1,
-                     "path":  "mobs/sheep/White_Sheep_JE3_BE6.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "29"
-                                  },
-                     "id":  "skeleton_skeleton_aiming_je2_be3",
-                     "order":  71,
-                     "animated":  false,
-                     "label":  "Skeleton Aiming JE2 BE3",
-                     "gen":  1,
-                     "path":  "mobs/skeleton/Skeleton_Aiming_JE2_BE3.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "29"
-                                  },
-                     "id":  "skeleton_skeleton_je6_be4",
-                     "order":  72,
-                     "animated":  false,
-                     "label":  "Skeleton JE6 BE4",
-                     "gen":  1,
-                     "path":  "mobs/skeleton/Skeleton_JE6_BE4.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "29"
-                                  },
-                     "id":  "skeleton_skeleton_trap",
-                     "order":  73,
-                     "animated":  false,
-                     "label":  "Skeleton Trap",
-                     "gen":  1,
-                     "path":  "mobs/skeleton/Skeleton_Trap.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "30"
-                                  },
-                     "id":  "skeleton_horse_baby_skeleton_horse_je7",
-                     "order":  74,
-                     "animated":  false,
-                     "label":  "Baby Skeleton Horse JE7",
-                     "gen":  1,
-                     "path":  "mobs/skeleton_horse/Baby_Skeleton_Horse_JE7.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "30"
-                                  },
-                     "id":  "skeleton_horse_skeleton_horse",
-                     "order":  75,
-                     "animated":  false,
-                     "label":  "Skeleton Horse",
-                     "gen":  1,
-                     "path":  "mobs/skeleton_horse/Skeleton_Horse.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/sniffer/Sniffer_feeling_happy_sheet_13f_4c.png",
-                     "frameCount":  13,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  76,
-                     "label":  "Sniffer Feeling Happy",
-                     "variants":  {
-                                      "":  "31"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "sniffer_sniffer_feeling_happy",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/sniffer/Sniffer_longsniff_sheet_13f_4c.png",
-                     "frameCount":  13,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  77,
-                     "label":  "Sniffer Longsniff",
-                     "variants":  {
-                                      "":  "31"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "sniffer_sniffer_longsniff",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/sniffer/Sniffer_sniffsniff_sheet_16f_4c.png",
-                     "frameCount":  16,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  78,
-                     "label":  "Sniffer Sniffsniff",
-                     "variants":  {
-                                      "":  "31"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  150,
-                     "frameWidth":  150,
-                     "id":  "sniffer_sniffer_sniffsniff",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "32"
-                                  },
-                     "id":  "spider_cave_spider_jockey",
-                     "order":  79,
-                     "animated":  false,
-                     "label":  "Cave Spider Jockey",
-                     "gen":  1,
-                     "path":  "mobs/spider/Cave_Spider_Jockey.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "33"
-                                  },
-                     "id":  "stray_stray_aiming_je2_be4",
-                     "order":  80,
-                     "animated":  false,
-                     "label":  "Stray Aiming JE2 BE4",
-                     "gen":  1,
-                     "path":  "mobs/stray/Stray_Aiming_JE2_BE4.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/vex/Angry_Vex_JE3_sheet_15f_4c.png",
-                     "frameCount":  15,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  81,
-                     "label":  "Angry Vex JE3",
-                     "variants":  {
-                                      "":  "34"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  120,
-                     "frameWidth":  150,
-                     "id":  "vex_angry_vex_je3",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "35"
-                                  },
-                     "id":  "villager_plains_baby_villager_base_je2",
-                     "order":  82,
-                     "animated":  false,
-                     "label":  "Plains Baby Villager Base JE2",
-                     "gen":  1,
-                     "path":  "mobs/villager/Plains_Baby_Villager_Base_JE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "35"
-                                  },
-                     "id":  "villager_plains_villager_base",
-                     "order":  83,
-                     "animated":  false,
-                     "label":  "Plains Villager Base",
-                     "gen":  1,
-                     "path":  "mobs/villager/Plains_Villager_Base.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "36"
-                                  },
-                     "id":  "vindicator_vindicator_attacking",
-                     "order":  84,
-                     "animated":  false,
-                     "label":  "Vindicator Attacking",
-                     "gen":  1,
-                     "path":  "mobs/vindicator/Vindicator_attacking.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/warden/Warden_sheet_20f_5c.png",
-                     "frameCount":  20,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  85,
-                     "label":  "Warden",
-                     "variants":  {
-                                      "":  "37"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  240,
-                     "frameWidth":  150,
-                     "id":  "warden_warden",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/warden/Warden_sniffing_sheet_21f_5c.png",
-                     "frameCount":  21,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  86,
-                     "label":  "Warden Sniffing",
-                     "variants":  {
-                                      "":  "37"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  200,
-                     "frameWidth":  150,
-                     "id":  "warden_warden_sniffing",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "38"
-                                  },
-                     "id":  "witch_witch",
-                     "order":  87,
-                     "animated":  false,
-                     "label":  "Witch",
-                     "gen":  1,
-                     "path":  "mobs/witch/Witch.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "38"
-                                  },
-                     "id":  "witch_witch_drinking",
-                     "order":  88,
-                     "animated":  false,
-                     "label":  "Witch Drinking",
-                     "gen":  1,
-                     "path":  "mobs/witch/Witch_drinking.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "39"
-                                  },
-                     "id":  "wither_blue_wither",
-                     "order":  89,
-                     "animated":  false,
-                     "label":  "Blue Wither",
-                     "gen":  1,
-                     "path":  "mobs/wither/Blue_Wither.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "39"
-                                  },
-                     "id":  "wither_wither_invulnerable_with_armor",
-                     "order":  90,
-                     "animated":  false,
-                     "label":  "Wither Invulnerable With Armor",
-                     "gen":  1,
-                     "path":  "mobs/wither/Wither_Invulnerable_with_Armor.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "39"
-                                  },
-                     "id":  "wither_wither_je2_be2",
-                     "order":  91,
-                     "animated":  false,
-                     "label":  "Wither JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/wither/Wither_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "40"
-                                  },
-                     "id":  "wither_skeleton_wither_skeleton",
-                     "order":  92,
-                     "animated":  false,
-                     "label":  "Wither Skeleton",
-                     "gen":  1,
-                     "path":  "mobs/wither_skeleton/Wither_Skeleton.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "40"
-                                  },
-                     "id":  "wither_skeleton_wither_skeleton_targeting",
-                     "order":  93,
-                     "animated":  false,
-                     "label":  "Wither Skeleton Targeting",
-                     "gen":  1,
-                     "path":  "mobs/wither_skeleton/Wither_Skeleton_Targeting.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "41"
-                                  },
-                     "id":  "wolf_angry_wolf_je2_be2",
-                     "order":  94,
-                     "animated":  false,
-                     "label":  "Angry Wolf JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/wolf/Angry_Wolf_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "41"
-                                  },
-                     "id":  "wolf_baby_wolf_je2_be2",
-                     "order":  95,
-                     "animated":  false,
-                     "label":  "Baby Wolf JE2 BE2",
-                     "gen":  1,
-                     "path":  "mobs/wolf/Baby_Wolf_JE2_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "41"
-                                  },
-                     "id":  "wolf_begging_tame_wolf",
-                     "order":  96,
-                     "animated":  false,
-                     "label":  "Begging Tame Wolf",
-                     "gen":  1,
-                     "path":  "mobs/wolf/Begging_Tame_Wolf.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "ext":  "png",
-                     "path":  "mobs/wolf/Wolf_shaking_sheet_20f_5c.png",
-                     "frameCount":  20,
-                     "gen":  1,
-                     "hardware":  "Android",
-                     "order":  97,
-                     "label":  "Wolf Shaking",
-                     "variants":  {
-                                      "":  "41"
-                                  },
-                     "animated":  true,
-                     "frameHeight":  131,
-                     "frameWidth":  150,
-                     "id":  "wolf_wolf_shaking",
-                     "game":  "Minecraft"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "42"
-                                  },
-                     "id":  "zombie_baby_zombie_je4_be4",
-                     "order":  98,
-                     "animated":  false,
-                     "label":  "Baby Zombie JE4 BE4",
-                     "gen":  1,
-                     "path":  "mobs/zombie/Baby_Zombie_JE4_BE4.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "42"
-                                  },
-                     "id":  "zombie_zombie_je5_be2",
-                     "order":  99,
-                     "animated":  false,
-                     "label":  "Zombie JE5 BE2",
-                     "gen":  1,
-                     "path":  "mobs/zombie/Zombie_JE5_BE2.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "43"
-                                  },
-                     "id":  "zombie_villager_over_power_zombie_villager_jockey",
-                     "order":  100,
-                     "animated":  false,
-                     "label":  "Over Power Zombie Villager Jockey",
-                     "gen":  1,
-                     "path":  "mobs/zombie_villager/Over_power_zombie_villager_jockey.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "43"
-                                  },
-                     "id":  "zombie_villager_plains_baby_zombie_villager_base",
-                     "order":  101,
-                     "animated":  false,
-                     "label":  "Plains Baby Zombie Villager Base",
-                     "gen":  1,
-                     "path":  "mobs/zombie_villager/Plains_Baby_Zombie_Villager_Base.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 },
-                 {
-                     "variants":  {
-                                      "":  "43"
-                                  },
-                     "id":  "zombie_villager_plains_zombie_villager_base",
-                     "order":  102,
-                     "animated":  false,
-                     "label":  "Plains Zombie Villager Base",
-                     "gen":  1,
-                     "path":  "mobs/zombie_villager/Plains_Zombie_Villager_Base.png",
-                     "ext":  "png",
-                     "game":  "Minecraft",
-                     "hardware":  "Android"
-                 }
-             ],
-    "spritesSha":  "local"
+  "sets": [
+    {
+      "ext": "png",
+      "path": "mobs/allay/Allay_Dancing_sheet_15f_4c.png",
+      "frameCount": 15,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 1,
+      "label": "Allay Dancing",
+      "variants": {
+        "": "1"
+      },
+      "animated": true,
+      "frameHeight": 131,
+      "frameWidth": 150,
+      "id": "allay_allay_dancing",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/axolotl/Axolotl_Idle_Floor_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 2,
+      "label": "Axolotl Idle Floor",
+      "variants": {
+        "": "2"
+      },
+      "animated": true,
+      "frameHeight": 96,
+      "frameWidth": 150,
+      "id": "axolotl_axolotl_idle_floor",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/axolotl/Axolotl_Swim_sheet_22f_5c.png",
+      "frameCount": 22,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 3,
+      "label": "Axolotl Swim",
+      "variants": {
+        "": "2"
+      },
+      "animated": true,
+      "frameHeight": 96,
+      "frameWidth": 150,
+      "id": "axolotl_axolotl_swim",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/axolotl/Axolotl_Walk_Floor_Underwater_sheet_23f_5c.png",
+      "frameCount": 23,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 4,
+      "label": "Axolotl Walk Floor Underwater",
+      "variants": {
+        "": "2"
+      },
+      "animated": true,
+      "frameHeight": 96,
+      "frameWidth": 150,
+      "id": "axolotl_axolotl_walk_floor_underwater",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/bat/Bat_sheet_19f_5c.png",
+      "frameCount": 19,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 5,
+      "label": "Bat",
+      "variants": {
+        "": "3"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "bat_bat",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/bee/Bee_29_BE_sheet_15f_4c.png",
+      "frameCount": 15,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 6,
+      "label": "Bee 29 BE",
+      "variants": {
+        "": "4"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "bee_bee_29_be",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/bee/Bee_sheet_21f_5c.png",
+      "frameCount": 21,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 7,
+      "label": "Bee",
+      "variants": {
+        "": "4"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "bee_bee",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/blaze/Blaze_sheet_17f_5c.png",
+      "frameCount": 17,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 8,
+      "label": "Blaze",
+      "variants": {
+        "": "5"
+      },
+      "animated": true,
+      "frameHeight": 300,
+      "frameWidth": 150,
+      "id": "blaze_blaze",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/blaze/Blaze_Shooting_sheet_17f_5c.png",
+      "frameCount": 17,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 9,
+      "label": "Blaze Shooting",
+      "variants": {
+        "": "5"
+      },
+      "animated": true,
+      "frameHeight": 180,
+      "frameWidth": 150,
+      "id": "blaze_blaze_shooting",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_baby_tuxedo_cat",
+      "order": 10,
+      "animated": false,
+      "label": "Baby Tuxedo Cat",
+      "gen": 1,
+      "path": "mobs/cat/Baby_Tuxedo_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_black_cat",
+      "order": 11,
+      "animated": false,
+      "label": "Black Cat",
+      "gen": 1,
+      "path": "mobs/cat/Black_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_british_shorthair_cat",
+      "order": 12,
+      "animated": false,
+      "label": "British Shorthair Cat",
+      "gen": 1,
+      "path": "mobs/cat/British_Shorthair_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_calico_cat",
+      "order": 13,
+      "animated": false,
+      "label": "Calico Cat",
+      "gen": 1,
+      "path": "mobs/cat/Calico_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_jellie_cat",
+      "order": 14,
+      "animated": false,
+      "label": "Jellie Cat",
+      "gen": 1,
+      "path": "mobs/cat/Jellie_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_persian_cat",
+      "order": 15,
+      "animated": false,
+      "label": "Persian Cat",
+      "gen": 1,
+      "path": "mobs/cat/Persian_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_red_cat",
+      "order": 16,
+      "animated": false,
+      "label": "Red Cat",
+      "gen": 1,
+      "path": "mobs/cat/Red_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_siamese_cat_je3",
+      "order": 17,
+      "animated": false,
+      "label": "Siamese Cat JE3",
+      "gen": 1,
+      "path": "mobs/cat/Siamese_Cat_JE3.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_tabby_cat",
+      "order": 18,
+      "animated": false,
+      "label": "Tabby Cat",
+      "gen": 1,
+      "path": "mobs/cat/Tabby_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_tamed_cat",
+      "order": 19,
+      "animated": false,
+      "label": "Tamed Cat",
+      "gen": 1,
+      "path": "mobs/cat/Tamed_cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_tuxedo_cat_je2_be2",
+      "order": 20,
+      "animated": false,
+      "label": "Tuxedo Cat JE2 BE2",
+      "gen": 1,
+      "path": "mobs/cat/Tuxedo_Cat_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "6"
+      },
+      "id": "cat_white_cat",
+      "order": 21,
+      "animated": false,
+      "label": "White Cat",
+      "gen": 1,
+      "path": "mobs/cat/White_Cat.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/chicken/Chicken_Flapping_sheet_8f_3c.png",
+      "frameCount": 8,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 22,
+      "label": "Chicken Flapping",
+      "variants": {
+        "": "7"
+      },
+      "animated": true,
+      "frameHeight": 160,
+      "frameWidth": 150,
+      "id": "chicken_chicken_flapping",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "7"
+      },
+      "id": "chicken_chicken_jockey",
+      "order": 23,
+      "animated": false,
+      "label": "Chicken Jockey",
+      "gen": 1,
+      "path": "mobs/chicken/Chicken_Jockey.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/creeper/Charged_Creeper_Animated_sheet_13f_4c.png",
+      "frameCount": 13,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 24,
+      "label": "Charged Creeper Animated",
+      "variants": {
+        "": "8"
+      },
+      "animated": true,
+      "frameHeight": 314,
+      "frameWidth": 150,
+      "id": "creeper_charged_creeper_animated",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/dolphin/Dolphin_sheet_20f_5c.png",
+      "frameCount": 20,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 25,
+      "label": "Dolphin",
+      "variants": {
+        "": "9"
+      },
+      "animated": true,
+      "frameHeight": 98,
+      "frameWidth": 150,
+      "id": "dolphin_dolphin",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "10"
+      },
+      "id": "enderman_enderman_be",
+      "order": 26,
+      "animated": false,
+      "label": "Enderman BE",
+      "gen": 1,
+      "path": "mobs/enderman/Enderman_BE.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/enderman/Enderman_Screaming_sheet_13f_4c.png",
+      "frameCount": 13,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 27,
+      "label": "Enderman Screaming",
+      "variants": {
+        "": "10"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "enderman_enderman_screaming",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/ender_dragon/Ender_Dragon_sheet_13f_4c.png",
+      "frameCount": 13,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 28,
+      "label": "Ender Dragon",
+      "variants": {
+        "": "11"
+      },
+      "animated": true,
+      "frameHeight": 153,
+      "frameWidth": 150,
+      "id": "ender_dragon_ender_dragon",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/evoker/Evoker_celebrating_sheet_24f_5c.png",
+      "frameCount": 24,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 29,
+      "label": "Evoker Celebrating",
+      "variants": {
+        "": "12"
+      },
+      "animated": true,
+      "frameHeight": 366,
+      "frameWidth": 150,
+      "id": "evoker_evoker_celebrating",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/fire/Campfire_JE2_BE2_sheet_20f_5c.png",
+      "frameCount": 20,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 30,
+      "label": "Campfire JE2 BE2",
+      "variants": {
+        "": "13"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "fire_campfire_je2_be2",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/fire/Fire_BE_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 31,
+      "label": "Fire BE",
+      "variants": {
+        "": "13"
+      },
+      "animated": true,
+      "frameHeight": 164,
+      "frameWidth": 150,
+      "id": "fire_fire_be",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/fire/Soul_Fire_JE1_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 32,
+      "label": "Soul Fire JE1",
+      "variants": {
+        "": "13"
+      },
+      "animated": true,
+      "frameHeight": 164,
+      "frameWidth": 150,
+      "id": "fire_soul_fire_je1",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "14"
+      },
+      "id": "fox_baby_fox",
+      "order": 33,
+      "animated": false,
+      "label": "Baby Fox",
+      "gen": 1,
+      "path": "mobs/fox/Baby_Fox.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "14"
+      },
+      "id": "fox_baby_snow_fox",
+      "order": 34,
+      "animated": false,
+      "label": "Baby Snow Fox",
+      "gen": 1,
+      "path": "mobs/fox/Baby_Snow_Fox.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "14"
+      },
+      "id": "fox_fox",
+      "order": 35,
+      "animated": false,
+      "label": "Fox",
+      "gen": 1,
+      "path": "mobs/fox/Fox.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "14"
+      },
+      "id": "fox_snow_fox",
+      "order": 36,
+      "animated": false,
+      "label": "Snow Fox",
+      "gen": 1,
+      "path": "mobs/fox/Snow_Fox.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/frog/Swamp_Frog_Walking_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 37,
+      "label": "Swamp Frog Walking",
+      "variants": {
+        "": "15"
+      },
+      "animated": true,
+      "frameHeight": 113,
+      "frameWidth": 150,
+      "id": "frog_swamp_frog_walking",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/frog/Temperate_Frog_JE1_BE1_sheet_23f_5c.png",
+      "frameCount": 23,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 38,
+      "label": "Temperate Frog JE1 BE1",
+      "variants": {
+        "": "15"
+      },
+      "animated": true,
+      "frameHeight": 113,
+      "frameWidth": 150,
+      "id": "frog_temperate_frog_je1_be1",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/frog/Tropical_Frog_Walking_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 39,
+      "label": "Tropical Frog Walking",
+      "variants": {
+        "": "15"
+      },
+      "animated": true,
+      "frameHeight": 113,
+      "frameWidth": 150,
+      "id": "frog_tropical_frog_walking",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/ghast/Ghast_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 40,
+      "label": "Ghast",
+      "variants": {
+        "": "16"
+      },
+      "animated": true,
+      "frameHeight": 189,
+      "frameWidth": 150,
+      "id": "ghast_ghast",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/ghast/Ghastling_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 41,
+      "label": "Ghastling",
+      "variants": {
+        "": "16"
+      },
+      "animated": true,
+      "frameHeight": 154,
+      "frameWidth": 150,
+      "id": "ghast_ghastling",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/ghast/Happy_Ghast_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 42,
+      "label": "Happy Ghast",
+      "variants": {
+        "": "16"
+      },
+      "animated": true,
+      "frameHeight": 154,
+      "frameWidth": 150,
+      "id": "ghast_happy_ghast",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "16"
+      },
+      "id": "ghast_ghast_shooting_je2_be2",
+      "order": 43,
+      "animated": false,
+      "label": "Ghast Shooting JE2 BE2",
+      "gen": 1,
+      "path": "mobs/ghast/Ghast_shooting_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "17"
+      },
+      "id": "hoglin_baby_hoglin_je6",
+      "order": 44,
+      "animated": false,
+      "label": "Baby Hoglin JE6",
+      "gen": 1,
+      "path": "mobs/hoglin/Baby_Hoglin_JE6.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/hoglin/Hoglin_being_Zombified_sheet_20f_5c.png",
+      "frameCount": 20,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 45,
+      "label": "Hoglin Being Zombified",
+      "variants": {
+        "": "17"
+      },
+      "animated": true,
+      "frameHeight": 117,
+      "frameWidth": 150,
+      "id": "hoglin_hoglin_being_zombified",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "17"
+      },
+      "id": "hoglin_hoglin_je3",
+      "order": 46,
+      "animated": false,
+      "label": "Hoglin JE3",
+      "gen": 1,
+      "path": "mobs/hoglin/Hoglin_JE3.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "18"
+      },
+      "id": "illusioner_illusioner_casting",
+      "order": 47,
+      "animated": false,
+      "label": "Illusioner Casting",
+      "gen": 1,
+      "path": "mobs/illusioner/Illusioner_Casting.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "18"
+      },
+      "id": "illusioner_illusioner_je3",
+      "order": 48,
+      "animated": false,
+      "label": "Illusioner JE3",
+      "gen": 1,
+      "path": "mobs/illusioner/Illusioner_JE3.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "19"
+      },
+      "id": "llama_creamy_llama",
+      "order": 49,
+      "animated": false,
+      "label": "Creamy Llama",
+      "gen": 1,
+      "path": "mobs/llama/Creamy_Llama.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/panda/Panda_Rolling_sheet_17f_5c.png",
+      "frameCount": 17,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 50,
+      "label": "Panda Rolling",
+      "variants": {
+        "": "20"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "panda_panda_rolling",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/panda/Panda_Unhappy_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 51,
+      "label": "Panda Unhappy",
+      "variants": {
+        "": "20"
+      },
+      "animated": true,
+      "frameHeight": 96,
+      "frameWidth": 150,
+      "id": "panda_panda_unhappy",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/panda/Baby_Panda.png",
+      "gen": 1,
+      "hardware": "Android",
+      "order": 52,
+      "label": "Baby Panda",
+      "variants": {
+        "": "20"
+      },
+      "animated": false,
+      "id": "panda_baby_panda",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/panda/Sitting_Panda.png",
+      "gen": 1,
+      "hardware": "Android",
+      "order": 53,
+      "label": "Sitting Panda",
+      "variants": {
+        "": "20"
+      },
+      "animated": false,
+      "id": "panda_sitting_panda",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/panda/Sitting_Brown_Baby.png",
+      "gen": 1,
+      "hardware": "Android",
+      "order": 54,
+      "label": "Sitting Brown Baby Panda",
+      "variants": {
+        "": "20"
+      },
+      "animated": false,
+      "id": "panda_sitting_brown_baby",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/panda/Sitting_Aggressive_Baby_Panda.png",
+      "gen": 1,
+      "hardware": "Android",
+      "order": 55,
+      "label": "Sitting Aggressive Baby Panda",
+      "variants": {
+        "": "20"
+      },
+      "animated": false,
+      "id": "panda_sitting_aggressive_baby",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/parrot/Dancing_Blue_Parrot_sheet_8f_3c.png",
+      "frameCount": 8,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 56,
+      "label": "Dancing Blue Parrot",
+      "variants": {
+        "": "21"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "parrot_dancing_blue_parrot",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/parrot/Dancing_Cyan_Parrot_sheet_8f_3c.png",
+      "frameCount": 8,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 57,
+      "label": "Dancing Cyan Parrot",
+      "variants": {
+        "": "21"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "parrot_dancing_cyan_parrot",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/parrot/Dancing_Gray_Parrot_sheet_8f_3c.png",
+      "frameCount": 8,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 58,
+      "label": "Dancing Gray Parrot",
+      "variants": {
+        "": "21"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "parrot_dancing_gray_parrot",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/parrot/Dancing_Green_Parrot_sheet_8f_3c.png",
+      "frameCount": 8,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 59,
+      "label": "Dancing Green Parrot",
+      "variants": {
+        "": "21"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "parrot_dancing_green_parrot",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/parrot/Dancing_Red_Parrot_sheet_8f_3c.png",
+      "frameCount": 8,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 60,
+      "label": "Dancing Red Parrot",
+      "variants": {
+        "": "21"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "parrot_dancing_red_parrot",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "22"
+      },
+      "id": "pig_baby_pig_je2_be2",
+      "order": 61,
+      "animated": false,
+      "label": "Baby Pig JE2 BE2",
+      "gen": 1,
+      "path": "mobs/pig/Baby_Pig_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "22"
+      },
+      "id": "pig_pig_je3_be2",
+      "order": 62,
+      "animated": false,
+      "label": "Pig JE3 BE2",
+      "gen": 1,
+      "path": "mobs/pig/Pig_JE3_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/piglin/Piglin_celebrate_hunt_Revision_1_sheet_23f_5c.png",
+      "frameCount": 23,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 63,
+      "label": "Piglin Celebrate Hunt Revision 1",
+      "variants": {
+        "": "23"
+      },
+      "animated": true,
+      "frameHeight": 149,
+      "frameWidth": 150,
+      "id": "piglin_piglin_celebrate_hunt_revision_1",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "24"
+      },
+      "id": "pillager_pillager_aiming_with_crossbow_be",
+      "order": 64,
+      "animated": false,
+      "label": "Pillager Aiming With Crossbow BE",
+      "gen": 1,
+      "path": "mobs/pillager/Pillager_Aiming_with_Crossbow_BE.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/pillager/Pillager_celebrating_BE_sheet_24f_5c.png",
+      "frameCount": 24,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 65,
+      "label": "Pillager Celebrating BE",
+      "variants": {
+        "": "24"
+      },
+      "animated": true,
+      "frameHeight": 211,
+      "frameWidth": 150,
+      "id": "pillager_pillager_celebrating_be",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "25"
+      },
+      "id": "polar_bear_baby_polar_bear",
+      "order": 66,
+      "animated": false,
+      "label": "Baby Polar Bear",
+      "gen": 1,
+      "path": "mobs/polar_bear/Baby_Polar_Bear.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/polar_bear/Polar_Bear_attacking_sheet_15f_4c.png",
+      "frameCount": 15,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 67,
+      "label": "Polar Bear Attacking",
+      "variants": {
+        "": "25"
+      },
+      "animated": true,
+      "frameHeight": 184,
+      "frameWidth": 150,
+      "id": "polar_bear_polar_bear_attacking",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "26"
+      },
+      "id": "rabbit_brown_rabbit_je2_be2",
+      "order": 68,
+      "animated": false,
+      "label": "Brown Rabbit JE2 BE2",
+      "gen": 1,
+      "path": "mobs/rabbit/Brown_Rabbit_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/rabbit/Rabbit_running_sheet_18f_5c.png",
+      "frameCount": 18,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 69,
+      "label": "Rabbit Running",
+      "variants": {
+        "": "26"
+      },
+      "animated": true,
+      "frameHeight": 196,
+      "frameWidth": 150,
+      "id": "rabbit_rabbit_running",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "26"
+      },
+      "id": "rabbit_toast_rabbit_je2_be2",
+      "order": 70,
+      "animated": false,
+      "label": "Toast Rabbit JE2 BE2",
+      "gen": 1,
+      "path": "mobs/rabbit/Toast_Rabbit_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "26"
+      },
+      "id": "rabbit_white_rabbit_je2_be2",
+      "order": 71,
+      "animated": false,
+      "label": "White Rabbit JE2 BE2",
+      "gen": 1,
+      "path": "mobs/rabbit/White_Rabbit_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "27"
+      },
+      "id": "ravager_ravager_be1",
+      "order": 72,
+      "animated": false,
+      "label": "Ravager BE1",
+      "gen": 1,
+      "path": "mobs/ravager/Ravager_BE1.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "27"
+      },
+      "id": "ravager_ravager_rider_29",
+      "order": 73,
+      "animated": false,
+      "label": "Ravager Rider 29",
+      "gen": 1,
+      "path": "mobs/ravager/Ravager_Rider_29.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "28"
+      },
+      "id": "sheep_baby_white_sheep_je3_be5",
+      "order": 74,
+      "animated": false,
+      "label": "Baby White Sheep JE3 BE5",
+      "gen": 1,
+      "path": "mobs/sheep/Baby_White_Sheep_JE3_BE5.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/sheep/Jeb_Sheep_JE2_sheet_24f_5c.png",
+      "frameCount": 24,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 75,
+      "label": "Jeb Sheep JE2",
+      "variants": {
+        "": "28"
+      },
+      "animated": true,
+      "frameHeight": 174,
+      "frameWidth": 150,
+      "id": "sheep_jeb_sheep_je2",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "28"
+      },
+      "id": "sheep_white_sheep_je3_be6",
+      "order": 76,
+      "animated": false,
+      "label": "White Sheep JE3 BE6",
+      "gen": 1,
+      "path": "mobs/sheep/White_Sheep_JE3_BE6.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "29"
+      },
+      "id": "skeleton_skeleton_aiming_je2_be3",
+      "order": 77,
+      "animated": false,
+      "label": "Skeleton Aiming JE2 BE3",
+      "gen": 1,
+      "path": "mobs/skeleton/Skeleton_Aiming_JE2_BE3.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "29"
+      },
+      "id": "skeleton_skeleton_je6_be4",
+      "order": 78,
+      "animated": false,
+      "label": "Skeleton JE6 BE4",
+      "gen": 1,
+      "path": "mobs/skeleton/Skeleton_JE6_BE4.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "29"
+      },
+      "id": "skeleton_skeleton_trap",
+      "order": 79,
+      "animated": false,
+      "label": "Skeleton Trap",
+      "gen": 1,
+      "path": "mobs/skeleton/Skeleton_Trap.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "30"
+      },
+      "id": "skeleton_horse_baby_skeleton_horse_je7",
+      "order": 80,
+      "animated": false,
+      "label": "Baby Skeleton Horse JE7",
+      "gen": 1,
+      "path": "mobs/skeleton_horse/Baby_Skeleton_Horse_JE7.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "30"
+      },
+      "id": "skeleton_horse_skeleton_horse",
+      "order": 81,
+      "animated": false,
+      "label": "Skeleton Horse",
+      "gen": 1,
+      "path": "mobs/skeleton_horse/Skeleton_Horse.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/sniffer/Sniffer_feeling_happy_sheet_13f_4c.png",
+      "frameCount": 13,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 82,
+      "label": "Sniffer Feeling Happy",
+      "variants": {
+        "": "31"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "sniffer_sniffer_feeling_happy",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/sniffer/Sniffer_longsniff_sheet_13f_4c.png",
+      "frameCount": 13,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 83,
+      "label": "Sniffer Longsniff",
+      "variants": {
+        "": "31"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "sniffer_sniffer_longsniff",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/sniffer/Sniffer_sniffsniff_sheet_16f_4c.png",
+      "frameCount": 16,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 84,
+      "label": "Sniffer Sniffsniff",
+      "variants": {
+        "": "31"
+      },
+      "animated": true,
+      "frameHeight": 150,
+      "frameWidth": 150,
+      "id": "sniffer_sniffer_sniffsniff",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "32"
+      },
+      "id": "spider_cave_spider_jockey",
+      "order": 85,
+      "animated": false,
+      "label": "Cave Spider Jockey",
+      "gen": 1,
+      "path": "mobs/spider/Cave_Spider_Jockey.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "33"
+      },
+      "id": "stray_stray_aiming_je2_be4",
+      "order": 86,
+      "animated": false,
+      "label": "Stray Aiming JE2 BE4",
+      "gen": 1,
+      "path": "mobs/stray/Stray_Aiming_JE2_BE4.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/vex/Angry_Vex_JE3_sheet_15f_4c.png",
+      "frameCount": 15,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 87,
+      "label": "Angry Vex JE3",
+      "variants": {
+        "": "34"
+      },
+      "animated": true,
+      "frameHeight": 120,
+      "frameWidth": 150,
+      "id": "vex_angry_vex_je3",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "35"
+      },
+      "id": "villager_plains_baby_villager_base_je2",
+      "order": 88,
+      "animated": false,
+      "label": "Plains Baby Villager Base JE2",
+      "gen": 1,
+      "path": "mobs/villager/Plains_Baby_Villager_Base_JE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "35"
+      },
+      "id": "villager_plains_villager_base",
+      "order": 89,
+      "animated": false,
+      "label": "Plains Villager Base",
+      "gen": 1,
+      "path": "mobs/villager/Plains_Villager_Base.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "36"
+      },
+      "id": "vindicator_vindicator_attacking",
+      "order": 90,
+      "animated": false,
+      "label": "Vindicator Attacking",
+      "gen": 1,
+      "path": "mobs/vindicator/Vindicator_attacking.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/warden/Warden_sheet_20f_5c.png",
+      "frameCount": 20,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 91,
+      "label": "Warden",
+      "variants": {
+        "": "37"
+      },
+      "animated": true,
+      "frameHeight": 240,
+      "frameWidth": 150,
+      "id": "warden_warden",
+      "game": "Minecraft"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/warden/Warden_sniffing_sheet_21f_5c.png",
+      "frameCount": 21,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 92,
+      "label": "Warden Sniffing",
+      "variants": {
+        "": "37"
+      },
+      "animated": true,
+      "frameHeight": 200,
+      "frameWidth": 150,
+      "id": "warden_warden_sniffing",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "38"
+      },
+      "id": "witch_witch",
+      "order": 93,
+      "animated": false,
+      "label": "Witch",
+      "gen": 1,
+      "path": "mobs/witch/Witch.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "38"
+      },
+      "id": "witch_witch_drinking",
+      "order": 94,
+      "animated": false,
+      "label": "Witch Drinking",
+      "gen": 1,
+      "path": "mobs/witch/Witch_drinking.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "39"
+      },
+      "id": "wither_blue_wither",
+      "order": 95,
+      "animated": false,
+      "label": "Blue Wither",
+      "gen": 1,
+      "path": "mobs/wither/Blue_Wither.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "39"
+      },
+      "id": "wither_wither_invulnerable_with_armor",
+      "order": 96,
+      "animated": false,
+      "label": "Wither Invulnerable With Armor",
+      "gen": 1,
+      "path": "mobs/wither/Wither_Invulnerable_with_Armor.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "39"
+      },
+      "id": "wither_wither_je2_be2",
+      "order": 97,
+      "animated": false,
+      "label": "Wither JE2 BE2",
+      "gen": 1,
+      "path": "mobs/wither/Wither_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "40"
+      },
+      "id": "wither_skeleton_wither_skeleton",
+      "order": 98,
+      "animated": false,
+      "label": "Wither Skeleton",
+      "gen": 1,
+      "path": "mobs/wither_skeleton/Wither_Skeleton.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "40"
+      },
+      "id": "wither_skeleton_wither_skeleton_targeting",
+      "order": 99,
+      "animated": false,
+      "label": "Wither Skeleton Targeting",
+      "gen": 1,
+      "path": "mobs/wither_skeleton/Wither_Skeleton_Targeting.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "41"
+      },
+      "id": "wolf_angry_wolf_je2_be2",
+      "order": 100,
+      "animated": false,
+      "label": "Angry Wolf JE2 BE2",
+      "gen": 1,
+      "path": "mobs/wolf/Angry_Wolf_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "41"
+      },
+      "id": "wolf_baby_wolf_je2_be2",
+      "order": 101,
+      "animated": false,
+      "label": "Baby Wolf JE2 BE2",
+      "gen": 1,
+      "path": "mobs/wolf/Baby_Wolf_JE2_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "41"
+      },
+      "id": "wolf_begging_tame_wolf",
+      "order": 102,
+      "animated": false,
+      "label": "Begging Tame Wolf",
+      "gen": 1,
+      "path": "mobs/wolf/Begging_Tame_Wolf.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "ext": "png",
+      "path": "mobs/wolf/Wolf_shaking_sheet_20f_5c.png",
+      "frameCount": 20,
+      "gen": 1,
+      "hardware": "Android",
+      "order": 103,
+      "label": "Wolf Shaking",
+      "variants": {
+        "": "41"
+      },
+      "animated": true,
+      "frameHeight": 131,
+      "frameWidth": 150,
+      "id": "wolf_wolf_shaking",
+      "game": "Minecraft"
+    },
+    {
+      "variants": {
+        "": "42"
+      },
+      "id": "zombie_baby_zombie_je4_be4",
+      "order": 104,
+      "animated": false,
+      "label": "Baby Zombie JE4 BE4",
+      "gen": 1,
+      "path": "mobs/zombie/Baby_Zombie_JE4_BE4.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "42"
+      },
+      "id": "zombie_zombie_je5_be2",
+      "order": 105,
+      "animated": false,
+      "label": "Zombie JE5 BE2",
+      "gen": 1,
+      "path": "mobs/zombie/Zombie_JE5_BE2.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "43"
+      },
+      "id": "zombie_villager_over_power_zombie_villager_jockey",
+      "order": 106,
+      "animated": false,
+      "label": "Over Power Zombie Villager Jockey",
+      "gen": 1,
+      "path": "mobs/zombie_villager/Over_power_zombie_villager_jockey.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "43"
+      },
+      "id": "zombie_villager_plains_baby_zombie_villager_base",
+      "order": 107,
+      "animated": false,
+      "label": "Plains Baby Zombie Villager Base",
+      "gen": 1,
+      "path": "mobs/zombie_villager/Plains_Baby_Zombie_Villager_Base.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    },
+    {
+      "variants": {
+        "": "43"
+      },
+      "id": "zombie_villager_plains_zombie_villager_base",
+      "order": 108,
+      "animated": false,
+      "label": "Plains Zombie Villager Base",
+      "gen": 1,
+      "path": "mobs/zombie_villager/Plains_Zombie_Villager_Base.png",
+      "ext": "png",
+      "game": "Minecraft",
+      "hardware": "Android"
+    }
+  ],
+  "spritesSha": "local"
 }
