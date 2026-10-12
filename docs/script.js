@@ -9,7 +9,7 @@ const APP = {
   versionCode: 1,
   releaseDate: "2026-10-12",
   apkUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0/MinecraftWidget-v1.0.apk",
-  apkSize: "26.5 MB",
+  apkSize: "20.2 MB",
   sha256: "975ed7d13f4a2d920d100af9a20e415ce1bdbee6ab9a36c58c60f5954a523c8e",
   discordUrl: "https://discord.gg/ZHgSShkkx5",
   githubUrl: "https://github.com/PrathamS1/MinecraftWidget",
@@ -91,16 +91,12 @@ function initLiveDownloadCount() {
       }
 
       statElements.forEach(el => {
-        if (total > 0) {
-          el.textContent = `${total.toLocaleString()} APK downloads on GitHub`;
-        } else {
-          el.textContent = `Latest Release v${APP.version} · Active on GitHub`;
-        }
+        el.textContent = `Downloads: ${total.toLocaleString()}`;
       });
     })
     .catch(() => {
       statElements.forEach(el => {
-        el.textContent = `Official v${APP.version} Release`;
+        el.textContent = "Downloads: count_error";
       });
     });
 }
