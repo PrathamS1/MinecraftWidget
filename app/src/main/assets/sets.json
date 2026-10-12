@@ -611,8 +611,8 @@
                  },
                  {
                      "ext":  "png",
-                     "path":  "mobs/ghast/Ghast_JE2_BE2_sheet_17f_5c.png",
-                     "frameCount":  17,
+                     "path":  "mobs/ghast/Ghast_JE2_BE2_sheet_14f_5c.png",
+                     "frameCount":  14,
                      "gen":  1,
                      "hardware":  "Android",
                      "order":  40,
@@ -746,8 +746,8 @@
                  },
                  {
                      "ext":  "png",
-                     "path":  "mobs/panda/Panda_Unhappy_sheet_17f_5c.png",
-                     "frameCount":  17,
+                     "path":  "mobs/panda/Panda_Unhappy_sheet_5f_5c.png",
+                     "frameCount":  5,
                      "gen":  1,
                      "hardware":  "Android",
                      "order":  49,
