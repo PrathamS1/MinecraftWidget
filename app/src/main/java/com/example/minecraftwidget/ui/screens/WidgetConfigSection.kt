@@ -43,6 +43,8 @@ fun WidgetConfigSection(
     onCornerRadiusDpChange: (Int) -> Unit,
     tapAction: TapAction,
     onTapActionChange: (TapAction) -> Unit,
+    flipHorizontal: Boolean = false,
+    onFlipHorizontalChange: (Boolean) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     var backgroundType by remember(showBackground) {
@@ -216,6 +218,26 @@ fun WidgetConfigSection(
                     onClick = { onTapActionChange(action) }
                 )
             }
+        }
+
+        Spacer(Modifier.height(16.dp))
+
+        // Direction / Mirror Section: Default vs Mirrored
+        SectionHeader("Facing Direction", Modifier.padding(horizontal = 16.dp))
+        Row(
+            Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            MinecraftChip(
+                label = "Default",
+                selected = !flipHorizontal,
+                onClick = { onFlipHorizontalChange(false) }
+            )
+            MinecraftChip(
+                label = "Mirrored (Flipped)",
+                selected = flipHorizontal,
+                onClick = { onFlipHorizontalChange(true) }
+            )
         }
     }
 }

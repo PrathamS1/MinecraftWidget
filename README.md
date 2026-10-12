@@ -179,6 +179,12 @@ All entity definitions are data-driven. To add a new entity:
 
 ---
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for detailed release notes and version history.
+
+---
+
 ## Legal and Trademark Notice
 
 NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.

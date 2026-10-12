@@ -16,6 +16,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.minecraftwidget.catalog.MinecraftEntity
@@ -58,6 +59,7 @@ fun EditWidgetScreen(
     var backgroundColor by remember(placedWidget.widgetId) { mutableStateOf(initialConfig.backgroundColor) }
     var cornerRadiusDp by remember(placedWidget.widgetId) { mutableStateOf(initialConfig.cornerRadiusDp) }
     var tapAction by remember(placedWidget.widgetId) { mutableStateOf(initialConfig.tapAction) }
+    var flipHorizontal by remember(placedWidget.widgetId) { mutableStateOf(initialConfig.flipHorizontal) }
 
     val gridState = rememberLazyGridState()
 
@@ -136,6 +138,7 @@ fun EditWidgetScreen(
                     entry.displayName,
                     Modifier
                         .size(160.dp)
+                        .graphicsLayer { scaleX = if (flipHorizontal) -1f else 1f }
                         .pressScale(interactions)
                         .tapWobble(hops)
                         .clickable(interactionSource = interactions, indication = null) {
@@ -145,7 +148,12 @@ fun EditWidgetScreen(
                     spriteSet = hero.set
                 )
             } else {
-                EntityIcon(entry.id, entry.displayName, size = 160.dp)
+                EntityIcon(
+                    entry.id,
+                    entry.displayName,
+                    size = 160.dp,
+                    modifier = Modifier.graphicsLayer { scaleX = if (flipHorizontal) -1f else 1f }
+                )
             }
         }
 
@@ -190,6 +198,8 @@ fun EditWidgetScreen(
                                 onCornerRadiusDpChange = { cornerRadiusDp = it },
                                 tapAction = tapAction,
                                 onTapActionChange = { tapAction = it },
+                                flipHorizontal = flipHorizontal,
+                                onFlipHorizontalChange = { flipHorizontal = it },
                                 modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
                             )
                         }
@@ -218,6 +228,7 @@ fun EditWidgetScreen(
                                 backgroundColor = backgroundColor,
                                 cornerRadiusDp = cornerRadiusDp,
                                 tapAction = tapAction,
+                                flipHorizontal = flipHorizontal,
                             )
                             onApplyChanges(updatedConfig)
                         }

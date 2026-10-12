@@ -37,6 +37,7 @@ fun SpriteImage(
     modifier: Modifier = Modifier,
     alignment: Alignment = Alignment.Center,
     spriteSet: SpriteSet? = null,
+    forceStatic: Boolean = false,
 ) {
     if (url == null) {
         Box(modifier)
@@ -60,7 +61,7 @@ fun SpriteImage(
         var frameIndex by remember(url) { mutableStateOf(0) }
         var singleBitmap by remember(url) { mutableStateOf<android.graphics.Bitmap?>(null) }
 
-        LaunchedEffect(url, spriteSet) {
+        LaunchedEffect(url, spriteSet, forceStatic) {
             try {
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { context.assets.open(path).use { stream ->
                     val bmp = BitmapFactory.decodeStream(stream)
@@ -74,9 +75,10 @@ fun SpriteImage(
                             val rows = bmp.height / frameH
                             val extracted = mutableListOf<android.graphics.Bitmap>()
                             var count = 0
+                            val maxFrames = if (forceStatic) 1 else frameCount
                             for (r in 0 until rows) {
                                 for (c in 0 until cols) {
-                                    if (count >= frameCount) break
+                                    if (count >= maxFrames) break
                                     extracted.add(
                                         android.graphics.Bitmap.createBitmap(
                                             bmp, c * frameW, r * frameH, frameW, frameH
@@ -84,6 +86,7 @@ fun SpriteImage(
                                     )
                                     count++
                                 }
+                                if (count >= maxFrames) break
                             }
                             frames = extracted
                             bmp.recycle()
@@ -97,17 +100,19 @@ fun SpriteImage(
             }
         }
 
-        LaunchedEffect(frames) {
-            if (frames.isEmpty()) return@LaunchedEffect
-            var current = 0
-            while (true) {
-                frameIndex = current
-                delay(100) // 10fps = 100ms per frame
-                current = (current + 1) % frames.size
+        if (!forceStatic) {
+            LaunchedEffect(frames) {
+                if (frames.isEmpty()) return@LaunchedEffect
+                var current = 0
+                while (true) {
+                    frameIndex = current
+                    delay(100) // 10fps = 100ms per frame
+                    current = (current + 1) % frames.size
+                }
             }
         }
 
-        val bitmapToDraw = frames.getOrNull(frameIndex) ?: singleBitmap
+        val bitmapToDraw = if (forceStatic) (frames.firstOrNull() ?: singleBitmap) else (frames.getOrNull(frameIndex) ?: singleBitmap)
         if (bitmapToDraw != null) {
             Image(
                 bitmap = bitmapToDraw.asImageBitmap(),
@@ -138,6 +143,7 @@ fun EntityIcon(
     modifier: Modifier = Modifier,
     size: Dp = 48.dp,
     fallbackUrl: String? = null,
+    forceStatic: Boolean = false,
 ) {
     val context = LocalContext.current
     var url by remember(entityId) { mutableStateOf<Any?>(null) }
@@ -159,7 +165,8 @@ fun EntityIcon(
                 url = url,
                 contentDescription = contentDescription,
                 modifier = Modifier.fillMaxSize(),
-                spriteSet = defaultSet
+                spriteSet = defaultSet,
+                forceStatic = forceStatic,
             )
         } else {
             Box(

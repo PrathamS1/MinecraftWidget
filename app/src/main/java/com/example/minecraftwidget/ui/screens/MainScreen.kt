@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -34,6 +35,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.minecraftwidget.catalog.MinecraftEntity
@@ -87,7 +89,7 @@ fun MainScreen(
     onClearCrash: () -> Unit,
     onPlayCry: (Int) -> Unit,
 ) {
-    var currentTab by remember { mutableStateOf(0) } // 0 = Home, 1 = Settings
+    var showSettings by remember { mutableStateOf(false) }
     val detail = state.detail
     val editingWidget = state.editingWidget
 
@@ -107,38 +109,35 @@ fun MainScreen(
             onPin = onPin,
             onPlayCry = onPlayCry,
         )
+        showSettings -> SettingsScreen(
+            cacheBytes = state.cacheBytes,
+            onClearCache = onClearCache,
+            onBack = { showSettings = false },
+            crashReport = state.crashReport,
+            onClearCrash = onClearCrash,
+            message = state.message,
+            placedCount = state.placed.size,
+        )
         else -> {
             Box(modifier = Modifier.fillMaxSize()) {
                 // Content
-                Box(modifier = Modifier.fillMaxSize().padding(bottom = 80.dp)) {
-                    if (currentTab == 1) {
-                        SettingsScreen(
-                            cacheBytes = state.cacheBytes,
-                            onClearCache = onClearCache,
-                            onBack = { currentTab = 0 },
-                            crashReport = state.crashReport,
-                            onClearCrash = onClearCrash,
-                            message = state.message,
-                            placedCount = state.placed.size,
-                        )
-                    } else {
-                        BrowseScreen(
-                            state = state,
-                            onQuery = onQuery,
-                            onCategory = onCategory,
-                            onAnimatedOnly = onAnimatedOnly,
-                            onOpenDetail = onOpenDetail,
-                            onEditWidget = onEditWidget,
-                        )
-                    }
+                Box(modifier = Modifier.fillMaxSize().padding(bottom = 76.dp)) {
+                    BrowseScreen(
+                        state = state,
+                        onQuery = onQuery,
+                        onCategory = onCategory,
+                        onAnimatedOnly = onAnimatedOnly,
+                        onOpenDetail = onOpenDetail,
+                        onOpenSettings = { showSettings = true },
+                    )
                 }
 
-                // Grass Background + Hotbar Nav
+                // Grass Background + Hotbar with placed widgets
                 Box(modifier = Modifier.align(Alignment.BottomCenter).fillMaxWidth()) {
                     SwayingGrassBackground(modifier = Modifier.align(Alignment.BottomCenter))
-                    MinecraftHotbarNav(
-                        currentTab = currentTab,
-                        onTabSelected = { currentTab = it },
+                    MinecraftHotbar(
+                        placed = state.placed,
+                        onSelectWidget = onEditWidget,
                         modifier = Modifier.align(Alignment.BottomCenter)
                     )
                 }
@@ -147,61 +146,88 @@ fun MainScreen(
     }
 }
 
+/**
+ * Authentic Minecraft inventory Hotbar at the bottom of the screen.
+ * - Displays cells across the full width (minimum slots calculated dynamically to fill width, default 9).
+ * - Slots show added-to-home entities in static format.
+ * - Clicking a placed entity opens the Edit Widget screen.
+ * - Horizontally scrollable if the placed count exceeds the screen width.
+ */
 @Composable
-fun MinecraftHotbarNav(
-    currentTab: Int,
-    onTabSelected: (Int) -> Unit,
+fun MinecraftHotbar(
+    placed: List<PlacedWidget>,
+    onSelectWidget: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Box(
+    val slotOuterSize = 52.dp
+    val slotInnerSize = 44.dp
+
+    BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
             .navigationBarsPadding()
-            .padding(bottom = 16.dp),
+            .padding(bottom = 10.dp),
         contentAlignment = Alignment.Center
     ) {
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically,
+        val totalAvailableWidth = maxWidth
+        // Calculate how many 52.dp slots fit in total width, with minimum of 9 (classic Minecraft hotbar)
+        val slotsThatFit = ((totalAvailableWidth - 16.dp) / slotOuterSize).toInt().coerceAtLeast(9)
+        val totalSlots = maxOf(slotsThatFit, placed.size)
+
+        LazyRow(
             modifier = Modifier
-                .background(androidx.compose.ui.graphics.Color(0xCC181818), androidx.compose.foundation.shape.RoundedCornerShape(6.dp))
-                .padding(4.dp)
+                .background(
+                    color = androidx.compose.ui.graphics.Color(0xD9101010),
+                    shape = androidx.compose.foundation.shape.RoundedCornerShape(4.dp)
+                )
+                .padding(3.dp),
+            horizontalArrangement = Arrangement.spacedBy(2.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            val navItems = listOf(
-                Pair(0, Icons.Default.Home) to "Home",
-                Pair(1, Icons.Default.Settings) to "Settings"
-            )
-            for ((item, label) in navItems) {
-                val (tabIndex, icon) = item
-                val isSelected = currentTab == tabIndex
+            items(totalSlots) { index ->
+                val placedItem = placed.getOrNull(index)
+                val interactions = remember { MutableInteractionSource() }
 
                 Box(
-                    Modifier
-                        .size(54.dp)
-                        .padding(2.dp)
+                    modifier = Modifier
+                        .size(slotOuterSize)
                         .background(
-                            if (isSelected) androidx.compose.ui.graphics.Color.White else androidx.compose.ui.graphics.Color(0xFF8B8B8B),
-                            androidx.compose.foundation.shape.RoundedCornerShape(4.dp)
+                            color = androidx.compose.ui.graphics.Color(0xFF8B8B8B),
+                            shape = androidx.compose.foundation.shape.RoundedCornerShape(3.dp)
                         )
-                        .clickable { onTabSelected(tabIndex) }
-                        .padding(if (isSelected) 3.dp else 2.dp),
+                        .padding(2.dp)
+                        .clickable(
+                            interactionSource = interactions,
+                            indication = null,
+                            enabled = placedItem != null,
+                            onClick = {
+                                placedItem?.let { onSelectWidget(it.widgetId) }
+                            }
+                        ),
                     contentAlignment = Alignment.Center
                 ) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
                             .background(
-                                if (isSelected) androidx.compose.ui.graphics.Color(0xFF2E7D32) else androidx.compose.ui.graphics.Color(0xFF373737),
-                                androidx.compose.foundation.shape.RoundedCornerShape(2.dp)
+                                color = if (placedItem != null) androidx.compose.ui.graphics.Color(0xFF2C2C2C) else androidx.compose.ui.graphics.Color(0xFF383838),
+                                shape = androidx.compose.foundation.shape.RoundedCornerShape(2.dp)
                             ),
                         contentAlignment = Alignment.Center
                     ) {
-                        Icon(
-                            icon,
-                            contentDescription = label,
-                            tint = androidx.compose.ui.graphics.Color.White,
-                            modifier = Modifier.size(28.dp)
-                        )
+                        if (placedItem != null) {
+                            EntityIcon(
+                                entityId = placedItem.config.entityId,
+                                contentDescription = placedItem.entry?.displayName,
+                                size = slotInnerSize - 6.dp,
+                                forceStatic = true,
+                                modifier = if (placedItem.config.flipHorizontal) {
+                                    Modifier.graphicsLayer { scaleX = -1f }
+                                } else {
+                                    Modifier
+                                }
+                            )
+                        }
                     }
                 }
             }
@@ -217,23 +243,9 @@ private fun BrowseScreen(
     onCategory: (String?) -> Unit,
     onAnimatedOnly: (Boolean) -> Unit,
     onOpenDetail: (MinecraftEntity) -> Unit,
-    onEditWidget: (Int) -> Unit,
+    onOpenSettings: () -> Unit,
 ) {
-    var headerHeightPx by remember { androidx.compose.runtime.mutableIntStateOf(0) }
-    var searchHeightPx by remember { androidx.compose.runtime.mutableIntStateOf(0) }
-    var chipsHeightPx by remember { androidx.compose.runtime.mutableIntStateOf(0) }
-    val density = androidx.compose.ui.platform.LocalDensity.current
-    val carouselExpandedHeightPx = remember { with(density) { 220.dp.toPx() } }
-    val spacer12Px = remember { with(density) { 12.dp.toPx() } }
-    val maxCollapsePx = remember { with(density) { 140.dp.toPx() } }
-    
-    val topHeightPx = headerHeightPx + searchHeightPx + chipsHeightPx + (spacer12Px * 2) +
-        (if (state.placed.isNotEmpty()) carouselExpandedHeightPx else 0f)
-
     val gridState = androidx.compose.foundation.lazy.grid.rememberLazyGridState()
-    
-    // We don't need the complex translation logic anymore. The user wants the header
-    // to scroll away naturally with the grid to make more room.
 
     Box(modifier = Modifier.fillMaxSize()) {
         Box(
@@ -264,10 +276,12 @@ private fun BrowseScreen(
                                 Spacer(Modifier.height(6.dp))
                                 Caption("Put a Minecraft entity on your home screen")
                             }
-                        }
 
-                        if (state.placed.isNotEmpty()) {
-                            PlacedWidgetsCarousel(placed = state.placed, onEdit = onEditWidget)
+                            MinecraftIconButton(
+                                icon = Icons.Default.Settings,
+                                contentDescription = "Settings",
+                                onClick = onOpenSettings,
+                            )
                         }
 
                         MinecraftSearchField(
