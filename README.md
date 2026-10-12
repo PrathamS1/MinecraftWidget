@@ -180,11 +180,11 @@ All entity definitions are data-driven. To add a new entity:
 
 ---
 
-## Community & Support
+## Links & Community
 
-Join our official Discord community to suggest new mobs, share your home screen setups, get help, and chat with fellow Minecraft fans:
-
-- **Discord Server**: [discord.gg/ZHgSShkkx5](https://discord.gg/ZHgSShkkx5)
+- **Website**: https://prathams1.github.io/MinecraftWidget/
+- **GitHub Releases**: https://github.com/PrathamS1/MinecraftWidget/releases
+- **Discord Server**: https://discord.gg/ZHgSShkkx5
 
 ---
 

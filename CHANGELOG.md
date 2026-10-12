@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.0] - 2026-10-12
 
+### Links
+- **Website**: https://prathams1.github.io/MinecraftWidget/
+- **GitHub Releases**: https://github.com/PrathamS1/MinecraftWidget/releases/tag/v1.0
+- **Discord Community**: https://discord.gg/ZHgSShkkx5
+
 ### Added
 - **Initial Official Release** of MinecraftWidget for Android 8.0+ (API 26+).
 - **Native Android Home Screen Widgets**:
