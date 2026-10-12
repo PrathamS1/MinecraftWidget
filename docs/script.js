@@ -11,7 +11,7 @@ const APP = {
   apkUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0/MinecraftWidget-v1.0.apk",
   apkSize: "26.5 MB",
   sha256: "975ed7d13f4a2d920d100af9a20e415ce1bdbee6ab9a36c58c60f5954a523c8e",
-  discordUrl: "https://discord.gg/minecraft",
+  discordUrl: "https://discord.gg/ZHgSShkkx5",
   githubUrl: "https://github.com/PrathamS1/MinecraftWidget",
   minAndroid: "Android 8.0+ (Oreo, API 26)",
   targetAndroid: "Android 14 (API 34)",

@@ -14,7 +14,7 @@ package com.example.minecraftwidget
 object Links {
 
     /** Never-expiring, unlimited-use invite to the MinecraftWidget beta server. */
-    const val DISCORD_INVITE = "https://discord.gg/QFuHPZJRqM"
+    const val DISCORD_INVITE = "https://discord.gg/ZHgSShkkx5"
 
     val hasDiscord: Boolean get() = DISCORD_INVITE.isNotBlank()
 }

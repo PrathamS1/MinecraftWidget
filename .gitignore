@@ -13,3 +13,9 @@ captures/
 # Project specific
 TempFolder/
 scratch/
+
+*.jks
+*.keystore
+keystore.properties
+*.apk
+*.sha256

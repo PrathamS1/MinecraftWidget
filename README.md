@@ -2,6 +2,7 @@
 
 [![Platform](https://img.shields.io/badge/Platform-Android_8.0+-3DDC84.svg?style=flat&logo=android)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-7F52FF.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
+[![Discord](https://img.shields.io/badge/Discord-Join_Community-5865F2.svg?style=flat&logo=discord&logoColor=white)](https://discord.gg/ZHgSShkkx5)
 
 MinecraftWidget is an open-source Android home screen widget application designed to bring animated Minecraft mobs directly to your launcher. Built with battery efficiency, low memory overhead, and an authentic Minecraft aesthetic at its core, the application runs smooth pixel-art animations using native system components without background battery drain.
 
@@ -176,6 +177,14 @@ All entity definitions are data-driven. To add a new entity:
    - In `app/src/main/assets/sets.json`, add the sprite set configuration defining the frame width, frame height, total frame count, and frame delay list (e.g., `[80, 80, ...]`).
 
 5. Rebuild the application using Gradle.
+
+---
+
+## Community & Support
+
+Join our official Discord community to suggest new mobs, share your home screen setups, get help, and chat with fellow Minecraft fans:
+
+- **Discord Server**: [discord.gg/ZHgSShkkx5](https://discord.gg/ZHgSShkkx5)
 
 ---
 
