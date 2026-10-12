@@ -724,6 +724,35 @@ img {
   text-align: center;
 }
 
+.more-coming-soon-banner {
+  margin-top: 28px;
+  padding: 24px 28px;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.coming-soon-content {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coming-soon-content h3 {
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.coming-soon-content p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
 /* ==========================================================================
    SECTION 3: HOW TO INSTALL (Clean 4-Step Grid)
    ========================================================================== */

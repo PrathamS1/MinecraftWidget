@@ -107,14 +107,15 @@ function initMobBrowser() {
       grid.appendChild(card);
     });
 
-    // 13th Tile linking to app
+    // 13th Tile linking to app / more coming soon
     const moreCard = document.createElement("a");
     moreCard.href = "#install";
     moreCard.className = "mob-card mob-card-more block";
     moreCard.innerHTML = `
-      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-        <span style="font-size:24px;">+ 96</span>
-        <span style="font-size:13px; font-weight:700;">More In App</span>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:8px 4px;">
+        <span style="font-size:22px; font-weight:700; color:var(--grass);">+ 96</span>
+        <span style="font-size:13px; font-weight:700; color:var(--ink);">In App</span>
+        <span style="font-size:11px; font-family:var(--font-mono); color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.5px;">More Soon</span>
       </div>
     `;
     grid.appendChild(moreCard);
