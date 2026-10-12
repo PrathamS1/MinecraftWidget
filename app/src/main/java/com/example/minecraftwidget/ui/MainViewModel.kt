@@ -20,6 +20,7 @@ import com.example.minecraftwidget.widget.CryPlayer
 import com.example.minecraftwidget.widget.MobWidgetProvider
 import com.example.minecraftwidget.widget.WidgetActions
 import com.example.minecraftwidget.widget.WidgetRenderer
+import com.example.minecraftwidget.widget.WidgetUpdater
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -57,6 +58,8 @@ data class MainUiState(
     val results: List<MinecraftEntity> = emptyList(),
     val detail: MinecraftEntity? = null,
     val detailSets: List<SetPreview> = emptyList(),
+    val editingWidget: PlacedWidget? = null,
+    val editingSets: List<SetPreview> = emptyList(),
     val placed: List<PlacedWidget> = emptyList(),
     val cacheBytes: Long = 0,
     val canPin: Boolean = false,
@@ -185,6 +188,41 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun closeDetail() = _state.update { it.copy(detail = null, detailSets = emptyList()) }
+
+    fun openEditWidget(widgetId: Int) {
+        val placedWidget = _state.value.placed.firstOrNull { it.widgetId == widgetId } ?: return
+        val entry = placedWidget.entry ?: return
+        _state.update { it.copy(editingWidget = placedWidget, editingSets = emptyList(), detail = null) }
+        launchSafely("load widget for editing") {
+            val sets = catalog.setsFor(entry.id)
+                .sortedWith(compareByDescending<SpriteSet> { it.animated }.thenBy { it.order })
+                .map { set ->
+                    SetPreview(
+                        set = set,
+                        url = source.spriteUrl(set, SpriteKey(set.id, entry.id)),
+                        shinyUrl = if (set.covers(entry.id, back = false, shiny = true, female = false, style = null)) {
+                            source.spriteUrl(set, SpriteKey(set.id, entry.id, shiny = true))
+                        } else {
+                            null
+                        },
+                    )
+                }
+            _state.update { it.copy(editingSets = sets) }
+        }
+        playCry(entry.id)
+    }
+
+    fun closeEditWidget() = _state.update { it.copy(editingWidget = null, editingSets = emptyList()) }
+
+    fun updateWidgetConfig(widgetId: Int, config: WidgetConfig) {
+        launchSafely("update the widget") {
+            store.put(widgetId, config)
+            val context = getApplication<Application>()
+            WidgetUpdater.request(context, intArrayOf(widgetId))
+            refreshPlaced()
+            closeEditWidget()
+        }
+    }
 
     /**
      * Asks the launcher to place a widget directly, so the user never has to hunt through

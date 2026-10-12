@@ -81,14 +81,24 @@ fun MainScreen(
     onCloseDetail: () -> Unit,
     onPin: (WidgetConfig) -> Unit,
     onEditWidget: (Int) -> Unit,
+    onCloseEditWidget: () -> Unit = {},
+    onUpdateWidget: (Int, WidgetConfig) -> Unit = { _, _ -> },
     onClearCache: () -> Unit,
     onClearCrash: () -> Unit,
     onPlayCry: (Int) -> Unit,
 ) {
     var currentTab by remember { mutableStateOf(0) } // 0 = Home, 1 = Settings
     val detail = state.detail
+    val editingWidget = state.editingWidget
 
     when {
+        editingWidget != null -> EditWidgetScreen(
+            placedWidget = editingWidget,
+            sets = state.editingSets,
+            onBack = onCloseEditWidget,
+            onApplyChanges = { updatedConfig -> onUpdateWidget(editingWidget.widgetId, updatedConfig) },
+            onPlayCry = onPlayCry,
+        )
         detail != null -> EntityDetailScreen(
             entry = detail,
             sets = state.detailSets,

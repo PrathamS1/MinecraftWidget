@@ -27,6 +27,7 @@ const CHANGELOG = [
     downloadUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0.0/MinecraftWidget-v1.0.0.apk",
     changes: [
       { type: "new", text: "108 mob sprite variations bundled 100% offline with zero network latency." },
+      { type: "new", text: "Live widget editor: tap any entity in 'Added To Home' to customize variants and styles." },
       { type: "new", text: "Real animated mob loops rendered with low-overhead bitmap slicing engine." },
       { type: "new", text: "Interactive tap sound effects featuring authentic in-game mob growls, purrs, and groans." },
       { type: "improved", text: "Clean light-mode settings UI with unified monochrome borders and stone accents." },
