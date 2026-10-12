@@ -4,7 +4,7 @@
  */
 
 const APP = {
-  name: "Minecraft Mob Widgets",
+  name: "MinecraftWidget",
   version: "1.0.0",
   versionCode: 1,
   releaseDate: "2026-10-12",
@@ -35,26 +35,6 @@ const CHANGELOG = [
       { type: "fixed", text: "Purged black padding rectangles from Ghast and Panda sprite animations." },
       { type: "improved", text: "Removed unnecessary internet permissions from AndroidManifest for total privacy." }
     ]
-  },
-  {
-    version: "0.9.5",
-    date: "2026-10-10",
-    title: "Performance & Rendering Engine Refactor",
-    changes: [
-      { type: "improved", text: "Frame planner optimized to fit Android launcher memory budget without crashing." },
-      { type: "improved", text: "Added high-density icon padding conforming to modern Android launcher standards." },
-      { type: "fixed", text: "Corrected sprite aspect ratio scaling on ultra-wide home screen grids." }
-    ]
-  },
-  {
-    version: "0.9.0",
-    date: "2026-10-08",
-    title: "Beta Milestone: Comprehensive Mob Catalog",
-    changes: [
-      { type: "new", text: "Catalog browser indexing Allay, Creeper, Axolotl, Warden, Panda, and 20+ species." },
-      { type: "new", text: "Custom widget configuration screen with sizing and companion styles." },
-      { type: "improved", text: "Audio playback engine utilizing lightweight SoundPool with battery-saving auto-release." }
-    ]
   }
 ];
 
@@ -77,8 +57,6 @@ const PREVIEW_MOBS = [
 document.addEventListener("DOMContentLoaded", () => {
   injectMetadata();
   initMobBrowser();
-  initInstallStepSwitcher();
-  initCopyChecksum();
   initDownloadToast();
   initScrollSpyAndProgress();
   initPlatformNotice();

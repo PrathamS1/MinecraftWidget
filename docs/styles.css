@@ -4,6 +4,8 @@
    No blurred shadows. No gradients. 100% crisp pixelated art.
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap');
+
 :root {
   /* Surfaces */
   --bg:          #FAF8F3;   /* warm off-white, paper / birch planks */
@@ -32,7 +34,7 @@
   --header-height: 72px;
 
   /* Typography */
-  --font-display: "Pixelify Sans", system-ui, sans-serif;
+  --font-display: "Geist Pixel", system-ui, sans-serif;
   --font-body:    "Inter", system-ui, -apple-system, sans-serif;
   --font-mono:    "JetBrains Mono", monospace;
 }
@@ -688,32 +690,37 @@ img {
 }
 
 /* ==========================================================================
-   SECTION 3: HOW TO INSTALL
+   SECTION 3: HOW TO INSTALL (Clean 4-Step Grid)
    ========================================================================== */
-.install-steps {
-  grid-column: 1 / 7;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.install-header {
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+}
+
+.install-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
 }
 
 .step-card {
-  padding: 20px;
+  padding: 24px 20px;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 16px;
   align-items: flex-start;
-  cursor: pointer;
   border: 3px solid var(--line);
   background: var(--surface);
-  box-shadow: 4px 4px 0 var(--line);
-  transition: all 120ms;
+  box-shadow: 6px 6px 0 var(--line);
+  transition: transform 120ms steps(3), box-shadow 120ms steps(3);
 }
 
-.step-card.active {
-  background: #FFFFFF;
-  border-color: var(--grass);
-  box-shadow: 6px 6px 0 var(--line);
-  transform: translateX(4px);
+.step-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--line);
 }
 
 .step-number {
@@ -727,18 +734,13 @@ img {
 
 .step-content h3 {
   font-size: 18px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .step-content p {
-  font-size: 15px;
-}
-
-.install-visual-wrap {
-  grid-column: 7 / 13;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 .install-sticky-visual {
@@ -983,14 +985,29 @@ img {
 }
 
 /* ==========================================================================
-   SECTION 7: FAQ ACCORDION
+   SECTION 7: FAQ ACCORDION (Centered)
    ========================================================================== */
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.faq-header {
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 36px;
+}
+
 .faq-grid {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  max-width: 900px;
+  max-width: 850px;
+  margin-inline: auto;
 }
 
 details.faq-item {
@@ -1038,7 +1055,7 @@ details[open] .faq-chevron {
 }
 
 /* ==========================================================================
-   FOOTER
+   FOOTER (Centered Middle Disclaimer)
    ========================================================================== */
 .site-footer {
   padding-inline: var(--pad-x);
@@ -1047,15 +1064,17 @@ details[open] .faq-chevron {
   background: var(--surface-alt);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
 }
 
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 32px;
+  width: 100%;
 }
 
 .footer-links {
@@ -1068,20 +1087,25 @@ details[open] .faq-chevron {
 
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
   border-top: 2px solid var(--line-soft);
   padding-top: 24px;
+  width: 100%;
   font-size: 13px;
   color: var(--ink-soft);
 }
 
 .legal-notice {
   font-size: 13px;
-  max-width: 70ch;
+  max-width: 80ch;
+  text-align: center;
+  margin-inline: auto;
   color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -1136,14 +1160,8 @@ details[open] .faq-chevron {
   .what-bento {
     grid-column: 1 / 13;
   }
-  .install-steps {
-    grid-column: 1 / 13;
-  }
-  .install-visual-wrap {
-    grid-column: 1 / 13;
-  }
-  .install-sticky-visual {
-    position: static;
+  .install-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .version-strip {
     grid-template-columns: 1fr;
@@ -1154,6 +1172,9 @@ details[open] .faq-chevron {
   }
   .changelog-index {
     display: none;
+  }
+  .install-grid {
+    grid-template-columns: 1fr;
   }
   .final-cta-inner {
     grid-template-columns: 1fr;

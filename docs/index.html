@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft Mob Widgets - Living Android Home Screen Companions</title>
+  <title>MinecraftWidget - Living Android Home Screen Companions</title>
   <meta name="description" content="Browse authentic animated and static Minecraft mobs and place them as living widgets on your Android home screen. Free, offline, and lightweight.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
-  <!-- Google Fonts: Pixelify Sans (headings), Inter (body), JetBrains Mono (code) -->
+  <!-- Google Fonts: Geist Pixel (headings), Inter (body), JetBrains Mono (code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,8 +21,8 @@
     <div id="xpProgressBar" class="xp-scroll-bar"></div>
 
     <a href="#" class="brand">
-      <img src="assets/icon.png" alt="Minecraft Mob Widgets Logo" class="brand-icon pixel-art">
-      <span>Mob Widgets</span>
+      <img src="assets/icon.png" alt="MinecraftWidget Logo" class="brand-icon pixel-art">
+      <span>MinecraftWidget</span>
     </a>
 
     <nav>
@@ -210,95 +210,48 @@
 
   <!-- Section 3: How To Install -->
   <section id="install" class="section section-alt">
-    <div class="grid-12">
-      <!-- Steps List -->
-      <div class="install-steps">
-        <span class="section-eyebrow">03 / INSTALLATION</span>
-        <h2>Up & Running in 60 Seconds</h2>
-        <p style="margin-bottom:20px;">
-          Because this app is independently distributed outside the Play Store, Android will ask you to confirm installing unknown apps. It takes just one tap.
-        </p>
+    <div class="install-header">
+      <span class="section-eyebrow">03 / INSTALLATION</span>
+      <h2>Up & Running in 4 Steps</h2>
+      <p>
+        Because this app is independently distributed outside the Play Store, Android will ask you to confirm installing unknown apps. It takes just a few taps.
+      </p>
+    </div>
 
-        <!-- Step 1 -->
-        <div class="step-card active" data-step="1">
-          <div class="slot step-number">1</div>
-          <div class="step-content">
-            <h3>Download the APK</h3>
-            <p>Tap the download button on this page to get the latest installation package directly from GitHub Releases.</p>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-card" data-step="2">
-          <div class="slot step-number">2</div>
-          <div class="step-content">
-            <h3>Allow Installation</h3>
-            <p>If prompted with "Install unknown apps", tap Settings and switch the toggle on for your browser or file manager.</p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-card" data-step="3">
-          <div class="slot step-number">3</div>
-          <div class="step-content">
-            <h3>Tap Install</h3>
-            <p>Confirm the prompt. Android finishes the installation in seconds without needing any special system access.</p>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step-card" data-step="4">
-          <div class="slot step-number">4</div>
-          <div class="step-content">
-            <h3>Open the App & Pick a Mob</h3>
-            <p>Browse the catalog, preview the animations, and tap the mob you want on your home screen.</p>
-          </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="step-card" data-step="5">
-          <div class="slot step-number">5</div>
-          <div class="step-content">
-            <h3>Add the Widget</h3>
-            <p>Long-press an empty spot on your home screen, tap Widgets, find Minecraft Mob Widgets, and drag it into place.</p>
-          </div>
+    <div class="install-grid">
+      <!-- Step 1 -->
+      <div class="step-card block">
+        <div class="slot step-number">1</div>
+        <div class="step-content">
+          <h3>Download APK</h3>
+          <p>Tap the download button on this page to get the latest installation package directly from GitHub Releases.</p>
         </div>
       </div>
 
-      <!-- Right Column: Interactive Step Visual & Trust Box -->
-      <div class="install-visual-wrap">
-        <div class="install-sticky-visual block">
-          <img id="installVisualImg" src="assets/screens/step3_config.webp" alt="Installation step screenshot" class="install-visual-img">
-          <span id="installVisualCaption" style="font-size:13px; font-weight:600; color:var(--ink-soft);">
-            Direct download without Play Store sign-in
-          </span>
+      <!-- Step 2 -->
+      <div class="step-card block">
+        <div class="slot step-number">2</div>
+        <div class="step-content">
+          <h3>Allow Installation</h3>
+          <p>If prompted with "Install unknown apps", tap Settings and switch the toggle on for your browser or file manager.</p>
         </div>
+      </div>
 
-        <!-- Trust & Requirements Box -->
-        <div class="install-info-box">
-          <h4 style="font-family:var(--font-display); font-size:16px;">App Verification & Safety</h4>
-          <p style="font-size:13px; margin:0;">
-            Every build is compiled directly from open source code without proprietary SDKs or analytics trackers.
-          </p>
+      <!-- Step 3 -->
+      <div class="step-card block">
+        <div class="slot step-number">3</div>
+        <div class="step-content">
+          <h3>Tap Install</h3>
+          <p>Confirm the prompt. Android finishes installing the package in seconds without needing any special system access.</p>
+        </div>
+      </div>
 
-          <div>
-            <span style="font-size:12px; font-weight:700; color:var(--dirt); display:block; margin-bottom:4px;">SHA-256 CHECKSUM</span>
-            <div class="checksum-row">
-              <span id="checksumValue" data-app="sha256">975ed7d13f4a2d920d100af9a20e415ce1bdbee6ab9a36c58c60f5954a523c8e</span>
-              <button id="copyChecksumBtn" class="copy-btn" title="Copy SHA-256 to clipboard" aria-label="Copy SHA-256">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <rect x="9" y="9" width="13" height="13" rx="0"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div style="font-size:13px; display:flex; flex-wrap:wrap; gap:16px; margin-top:4px;">
-            <span><strong>Requirement:</strong> Android 8.0+</span>
-            <span><strong>Storage:</strong> ~35 MB</span>
-            <span><strong>Permissions:</strong> None</span>
-          </div>
+      <!-- Step 4 -->
+      <div class="step-card block">
+        <div class="slot step-number">4</div>
+        <div class="step-content">
+          <h3>Add Your Widget</h3>
+          <p>Open MinecraftWidget, pick your favourite companion, then long-press your home screen, tap Widgets, and place it.</p>
         </div>
       </div>
     </div>
@@ -384,74 +337,76 @@
     </div>
   </section>
 
-  <!-- Section 6: FAQ (Accessible Accordion) -->
+  <!-- Section 6: FAQ (Accessible Accordion - Centered in Middle) -->
   <section class="section">
-    <div style="max-width:900px; margin-bottom:32px;">
-      <span class="section-eyebrow">05 / QUESTIONS & ANSWERS</span>
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know about compatibility, permissions, and features.</p>
-    </div>
+    <div class="faq-section">
+      <div class="faq-header">
+        <span class="section-eyebrow">05 / QUESTIONS & ANSWERS</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about compatibility, permissions, and features.</p>
+      </div>
 
-    <div class="faq-grid">
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Is the app free? Does it contain ads?</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <div class="faq-answer">
-          Yes, 100% free and open-source. There are zero advertisements, zero in-app purchases, and no premium locks. Every single mob is unlocked right away.
-        </div>
-      </details>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Is the app free? Does it contain ads?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            Yes, 100% free and open-source. There are zero advertisements, zero in-app purchases, and no premium locks. Every single mob is unlocked right away.
+          </div>
+        </details>
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Is it safe to install this APK? What permissions does it require?</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <div class="faq-answer">
-          Completely safe. The app requests zero sensitive permissions. In fact, we deliberately removed the internet permission from AndroidManifest.xml, meaning the app literally cannot connect to the internet or send data anywhere.
-        </div>
-      </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Is it safe to install this APK? What permissions does it require?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            Completely safe. The app requests zero sensitive permissions. In fact, we deliberately removed the internet permission from AndroidManifest.xml, meaning the app literally cannot connect to the internet or send data anywhere.
+          </div>
+        </details>
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Which Android versions and launchers are supported?</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <div class="faq-answer">
-          Any Android device running Android 8.0 (Oreo) or newer. It works on Pixel Launcher, Samsung One UI, Nova Launcher, Lawnchair, Xiaomi MIUI/HyperOS, and all standard Android launcher environments.
-        </div>
-      </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Which Android versions and launchers are supported?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            Any Android device running Android 8.0 (Oreo) or newer. It works on Pixel Launcher, Samsung One UI, Nova Launcher, Lawnchair, Xiaomi MIUI/HyperOS, and all standard Android launcher environments.
+          </div>
+        </details>
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Why isn't my widget animating or updating?</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <div class="faq-answer">
-          Some aggressive manufacturer power-saving profiles (like Extreme Battery Saver) suspend widget animations to conserve milliwatts. Adding the app to your phone's "Never sleep" or "Unrestricted battery" list ensures immediate and smooth frame playback.
-        </div>
-      </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Why isn't my widget animating or updating?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            Some aggressive manufacturer power-saving profiles (like Extreme Battery Saver) suspend widget animations to conserve milliwatts. Adding the app to your phone's "Never sleep" or "Unrestricted battery" list ensures immediate and smooth frame playback.
+          </div>
+        </details>
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Can I suggest new mobs, animations, or sounds?</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <div class="faq-answer">
-          Absolutely! Join our Discord or open an issue on the GitHub repository. Community members frequently suggest new mobs and help source authentic pixel sprites.
-        </div>
-      </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Can I suggest new mobs, animations, or sounds?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            Absolutely! Join our Discord or open an issue on the GitHub repository. Community members frequently suggest new mobs and help source authentic pixel sprites.
+          </div>
+        </details>
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Is there an iOS or iPhone version?</span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <div class="faq-answer">
-          No. iOS does not support continuous looping frame animations in WidgetKit in the manner Android AppWidgets do, nor does Apple allow sideloading outside specific regional requirements.
-        </div>
-      </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Is there an iOS or iPhone version?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </summary>
+          <div class="faq-answer">
+            No. iOS does not support continuous looping frame animations in WidgetKit in the manner Android AppWidgets do, nor does Apple allow sideloading outside specific regional requirements.
+          </div>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -461,11 +416,14 @@
       <div>
         <a href="#" class="brand" style="margin-bottom:8px;">
           <img src="assets/icon.png" alt="Logo" class="brand-icon pixel-art">
-          <span>Minecraft Mob Widgets</span>
+          <span>MinecraftWidget</span>
         </a>
         <p style="font-size:14px; max-width:40ch;">
           Fan-crafted Android widgets bringing the living charm of the Overworld, Nether, and End straight to your home screen.
         </p>
+        <div style="margin-top:12px;">
+          <span class="badge badge-gold">Version <span data-app="version">1.0.0</span> · Released <span data-app="releaseDate">2026-10-12</span></span>
+        </div>
       </div>
 
       <ul class="footer-links">
@@ -482,7 +440,6 @@
         NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG STUDIOS OR MICROSOFT.
         Minecraft is a trademark of Mojang Synergies AB. All mob designs and sounds are property of their respective creators and utilized under fair use fan guidelines.
       </p>
-      <span>Version <span data-app="version">1.0.0</span> · Released <span data-app="releaseDate">2026-10-12</span></span>
     </div>
   </footer>
 
