@@ -5,10 +5,10 @@
 
 const APP = {
   name: "MinecraftWidget",
-  version: "1.0.0",
+  version: "1.0",
   versionCode: 1,
   releaseDate: "2026-10-12",
-  apkUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0.0/MinecraftWidget-v1.0.0.apk",
+  apkUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0/MinecraftWidget-v1.0.apk",
   apkSize: "26.5 MB",
   sha256: "975ed7d13f4a2d920d100af9a20e415ce1bdbee6ab9a36c58c60f5954a523c8e",
   discordUrl: "https://discord.gg/minecraft",
@@ -21,10 +21,10 @@ const APP = {
 
 const CHANGELOG = [
   {
-    version: "1.0.0",
+    version: "1.0",
     date: "2026-10-12",
     title: "Official Release: Living Companions on Your Home Screen",
-    downloadUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0.0/MinecraftWidget-v1.0.0.apk",
+    downloadUrl: "https://github.com/PrathamS1/MinecraftWidget/releases/download/v1.0/MinecraftWidget-v1.0.apk",
     changes: [
       { type: "new", text: "108 mob sprite variations bundled 100% offline with zero network latency." },
       { type: "new", text: "Live widget editor: tap any entity in 'Added To Home' to customize variants and styles." },

@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
-## [1.0.0] - 2026-10-12
+## [1.0] - 2026-10-12
 
 ### Added
 - **Initial Official Release** of MinecraftWidget for Android 8.0+ (API 26+).
