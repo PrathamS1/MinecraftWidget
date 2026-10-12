@@ -32,17 +32,9 @@ android {
         minSdk = 26
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // Sprites are pinned to an exact commit of PokeAPI/sprites so cached files
-        // never go stale and jsDelivr can cache them permanently.
-        buildConfigField(
-            "String",
-            "SPRITES_SHA",
-            "\"c10459b9b0129eaca5c5d9b1cac65336debb1d08\"",
-        )
     }
 
     signingConfigs {
