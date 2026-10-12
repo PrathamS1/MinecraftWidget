@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog - Minecraft Mob Widgets</title>
+  <meta name="description" content="Release history and detailed changelog for Minecraft Mob Widgets for Android.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Google Fonts: Pixelify Sans (headings), Inter (body), JetBrains Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Header / Nav -->
+  <header class="site-header">
+    <div id="xpProgressBar" class="xp-scroll-bar"></div>
+
+    <a href="index.html" class="brand">
+      <img src="assets/icon.png" alt="Minecraft Mob Widgets Logo" class="brand-icon pixel-art">
+      <span>Mob Widgets</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#about" class="nav-link">What It Is</a></li>
+        <li><a href="index.html#preview" class="nav-link">Mob Browser</a></li>
+        <li><a href="index.html#install" class="nav-link">Install</a></li>
+        <li><a href="changelog.html" class="nav-link active">Changelog</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-sm btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+
+      <a href="#" data-app="apkUrl" class="btn btn-sm btn-primary download-trigger">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download APK</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Changelog Hero / Intro -->
+  <section class="section" style="padding-bottom: 24px;">
+    <div style="max-width: 800px;">
+      <span class="section-eyebrow">RELEASE HISTORY</span>
+      <h1>Changelog & Updates</h1>
+      <p style="margin-top: 12px;">
+        Every update, performance optimization, and bug fix across all versions of Minecraft Mob Widgets. Clean, transparent, and documented.
+      </p>
+    </div>
+  </section>
+
+  <!-- Changelog Timeline & Side Index -->
+  <section class="section" style="padding-top: 24px;">
+    <div class="changelog-layout">
+      
+      <!-- Left Column: Timeline Nodes (rendered via script.js or static markup for fast initial paint) -->
+      <div id="changelogTimeline" class="timeline">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Right Column: Sticky Quick Jump Index -->
+      <aside class="changelog-index block">
+        <h3 style="font-size:18px; border-bottom:2px solid var(--line-soft); padding-bottom:8px;">
+          Jump to Version
+        </h3>
+        <a href="#v-1-0-0" class="index-link active">v1.0.0 (Latest)</a>
+        <a href="#v-0-9-5" class="index-link">v0.9.5</a>
+        <a href="#v-0-9-0" class="index-link">v0.9.0</a>
+
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--line-soft);">
+          <span style="font-size:12px; color:var(--ink-soft); display:block; margin-bottom:8px;">
+            Looking for source code?
+          </span>
+          <a href="#" data-app="githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" style="width:100%;">
+            GitHub Repository
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:8px;">
+          <img src="assets/icon.png" alt="Logo" class="brand-icon pixel-art">
+          <span>Minecraft Mob Widgets</span>
+        </a>
+        <p style="font-size:14px; max-width:40ch;">
+          Fan-crafted Android widgets bringing the living charm of the Overworld, Nether, and End straight to your home screen.
+        </p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">What It Is</a></li>
+        <li><a href="index.html#install">Installation</a></li>
+        <li><a href="#" data-app="githubUrl" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="#" data-app="discordUrl" target="_blank" rel="noopener noreferrer">Discord</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="legal-notice">
+        NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG STUDIOS OR MICROSOFT.
+        Minecraft is a trademark of Mojang Synergies AB. All mob designs and sounds are property of their respective creators and utilized under fair use fan guidelines.
+      </p>
+      <span>Version <span data-app="version">1.0.0</span> · Released <span data-app="releaseDate">2026-10-12</span></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
