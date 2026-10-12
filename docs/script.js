@@ -63,7 +63,47 @@ document.addEventListener("DOMContentLoaded", () => {
   initChangelog();
   initVideoControls();
   initMobileNav();
+  initLiveDownloadCount();
 });
+
+// Fetch and display live GitHub APK downloads
+function initLiveDownloadCount() {
+  const statElements = document.querySelectorAll("[data-live-downloads] .stat-text");
+  if (!statElements.length) return;
+
+  fetch("https://api.github.com/repos/PrathamS1/MinecraftWidget/releases")
+    .then(res => {
+      if (!res.ok) throw new Error("API rate limited");
+      return res.json();
+    })
+    .then(releases => {
+      let total = 0;
+      if (Array.isArray(releases)) {
+        releases.forEach(rel => {
+          if (Array.isArray(rel.assets)) {
+            rel.assets.forEach(asset => {
+              if (asset.name && asset.name.endsWith(".apk")) {
+                total += (asset.download_count || 0);
+              }
+            });
+          }
+        });
+      }
+
+      statElements.forEach(el => {
+        if (total > 0) {
+          el.textContent = `${total.toLocaleString()} APK downloads on GitHub`;
+        } else {
+          el.textContent = `Latest Release v${APP.version} · Active on GitHub`;
+        }
+      });
+    })
+    .catch(() => {
+      statElements.forEach(el => {
+        el.textContent = `Official v${APP.version} Release`;
+      });
+    });
+}
 
 // Inject metadata across all matching DOM elements
 function injectMetadata() {

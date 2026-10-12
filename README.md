@@ -2,6 +2,7 @@
 
 [![Platform](https://img.shields.io/badge/Platform-Android_8.0+-3DDC84.svg?style=flat&logo=android)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-7F52FF.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
+[![Downloads](https://img.shields.io/github/downloads/PrathamS1/MinecraftWidget/total.svg?style=flat&color=3DDC84&logo=github&label=Downloads)](https://github.com/PrathamS1/MinecraftWidget/releases)
 [![Discord](https://img.shields.io/badge/Discord-Join_Community-5865F2.svg?style=flat&logo=discord&logoColor=white)](https://discord.gg/ZHgSShkkx5)
 
 MinecraftWidget is an open-source Android home screen widget application designed to bring animated Minecraft mobs directly to your launcher. Built with battery efficiency, low memory overhead, and an authentic Minecraft aesthetic at its core, the application runs smooth pixel-art animations using native system components without background battery drain.

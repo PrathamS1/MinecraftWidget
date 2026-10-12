@@ -433,6 +433,43 @@ img {
   margin-top: 12px;
 }
 
+/* Live Download Count Indicator */
+.cta-download-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface-alt);
+  border: 2px solid var(--line);
+  padding: 4px 10px;
+  width: fit-content;
+  box-shadow: 2px 2px 0 var(--line);
+}
+
+.live-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--grass);
+  box-shadow: 0 0 0 rgba(76, 175, 80, 0.4);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
 .hero-trust {
   font-size: 14px;
   font-family: var(--font-mono);
