@@ -553,13 +553,48 @@ img {
   gap: 24px;
 }
 
-.bento-large {
-  grid-column: span 2;
+.bento-media-tile {
   padding: 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.bento-media-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bento-video-container,
+.bento-image-container {
+  width: 100%;
+  border: 3px solid var(--line);
+  box-shadow: 4px 4px 0 var(--line);
+  background: #000000;
+  overflow: hidden;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.showcase-video {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  display: block;
+  background: var(--surface-alt);
 }
 
 .bento-tile {

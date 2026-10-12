@@ -125,6 +125,7 @@
 
         <div class="device-frame">
           <video id="heroVideo" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+            <source src="assets/demo.webm" type="video/webm">
             <source src="assets/hero.webm" type="video/webm">
             <source src="assets/hero.mp4" type="video/mp4">
           </video>
@@ -140,38 +141,83 @@
     </div>
   </section>
 
-  <!-- Section 1: What It Is (Bento Grid) -->
+  <!-- Section 1: What It Is (Interactive Feature Showcase & Bento Grid) -->
   <section id="about" class="section section-alt">
     <div class="grid-12">
       <div class="what-header">
         <span class="section-eyebrow">01 / WHAT IS IT</span>
         <h2>Your Home Screen, Inhabited</h2>
         <p>
-          Minecraft Mob Widgets turns your Android home screen into a living habitat. Unlike ordinary picture widgets that sit motionless, our custom lightweight rendering engine plays clean sprite sheet loops without draining your battery.
+          MinecraftWidget turns your Android launcher into a living, breathing habitat. Unlike static picture frames, our lightweight native rendering engine loops authentic pixel animations, handles on-tap audio cries, and features full horizontal mirroring with zero battery drain.
         </p>
         <p style="font-size:14px; margin-top:12px;">
-          Created as a passionate fan project. 100% offline with zero advertisements or tracking.
+          100% offline fan application. Zero network calls, zero tracking, and zero background wake locks.
         </p>
       </div>
 
       <div class="what-bento">
-        <!-- Large Tile: Full Library -->
-        <div class="block bento-large">
-          <div>
-            <span class="badge badge-gold" style="margin-bottom:8px;">108+ VARIANTS</span>
-            <h3 style="margin-bottom:8px;">Massive Entity Catalog</h3>
-            <p>From passive Allays and curious Bees to Wardens and Charged Creepers, pick between regular poses and rare variants.</p>
+        <!-- Live Showcase Video: Real Android Launcher in Action -->
+        <div class="block bento-media-tile">
+          <div class="bento-media-header">
+            <span class="badge badge-diamond">LIVE WIDGET EXPERIENCE</span>
+            <h3>Native Android Home Screen</h3>
+            <p>Watch multiple animated Minecraft mobs living side-by-side on your home screen with smooth looping motion.</p>
           </div>
-          <img src="assets/screens/step4_choose_mob.webp" alt="App mob catalog" class="bento-preview-img">
+          <div class="bento-video-container">
+            <video autoplay muted loop playsinline class="showcase-video">
+              <source src="assets/showcase2.webm" type="video/webm">
+            </video>
+          </div>
         </div>
 
-        <!-- Tile: Real Animation Engine -->
+        <!-- In-App Companion Screenshot: Browse & Configure -->
+        <div class="block bento-media-tile">
+          <div class="bento-media-header">
+            <span class="badge badge-improved">INTUITIVE COMPANION APP</span>
+            <h3>Hotbar Inventory & Edit Suite</h3>
+            <p>Equipped with a Minecraft Hotbar tracking active widgets, live horizontal mirroring, and full shape customizations.</p>
+          </div>
+          <div class="bento-image-container">
+            <img src="assets/showcase1.jpeg" alt="MinecraftWidget in-app showcase" class="showcase-img">
+          </div>
+        </div>
+
+        <!-- Tile: Massive Entity Library -->
         <div class="block bento-tile">
           <div class="slot bento-tile-icon">
             <img src="assets/mobs/allay_anim.webp" alt="Allay animation" class="pixel-art" style="width:40px; height:40px;">
           </div>
-          <h3>Smooth Bitmap Animation</h3>
-          <p>Carefully timed uniform frame loops resampled directly for Android's widget memory budgets without crashes.</p>
+          <span class="badge badge-gold" style="width:fit-content; margin-bottom:4px;">108+ VARIANTS</span>
+          <h3>Massive Entity Catalog</h3>
+          <p>From passive Allays and bees to ghasts, pandas, and wardens. Easily filter by hostile, passive, neutral, or search any entity.</p>
+        </div>
+
+        <!-- Tile: Real Animation & Flip Mirroring -->
+        <div class="block bento-tile">
+          <div class="slot bento-tile-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="m16 3 4 4-4 4"></path>
+              <path d="M20 7H4"></path>
+              <path d="m8 21-4-4 4-4"></path>
+              <path d="M4 17h16"></path>
+            </svg>
+          </div>
+          <span class="badge badge-new" style="width:fit-content; margin-bottom:4px;">NEW CAPABILITY</span>
+          <h3>Horizontal Mirroring</h3>
+          <p>Face your companions left or right to seamlessly fit app icon arrangements and custom launcher wallpapers.</p>
+        </div>
+
+        <!-- Tile: Interactive Sounds -->
+        <div class="block bento-tile">
+          <div class="slot bento-tile-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </div>
+          <h3>Authentic Tap Actions</h3>
+          <p>Configure widgets to play genuine mob cries via low-latency SoundPool, trigger animations, or spring wobble on tap.</p>
         </div>
 
         <!-- Tile: Battery Friendly -->
@@ -183,7 +229,7 @@
             </svg>
           </div>
           <h3>Zero Background Drain</h3>
-          <p>Widgets strictly pause when your screen turns off. No persistent background wake-locks or battery hogs.</p>
+          <p>Native RemoteViews engine pauses immediately when the device screen locks. Zero background daemons or wake locks.</p>
         </div>
       </div>
     </div>
