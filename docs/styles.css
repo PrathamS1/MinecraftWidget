@@ -55,11 +55,13 @@ html {
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  max-width: 100%;
   background-color: var(--bg);
   color: var(--ink);
 }
@@ -242,6 +244,15 @@ img {
   transition: transform 120ms steps(3), box-shadow 120ms steps(3), background-color 120ms;
   text-decoration: none;
   min-height: 54px;
+  max-width: 100%;
+}
+
+.btn-label-mobile {
+  display: none;
+}
+
+.mobile-only-nav-item {
+  display: none;
 }
 
 .btn:hover {
@@ -1085,6 +1096,12 @@ img {
   gap: 40px;
 }
 
+.final-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 /* ==========================================================================
    SECTION 7: FAQ ACCORDION (Centered)
    ========================================================================== */
@@ -1254,6 +1271,10 @@ details[open] .faq-chevron {
   .hero-media {
     grid-column: 1 / 13;
     margin-top: 24px;
+    justify-content: center;
+  }
+  .floating-mob {
+    display: none;
   }
   .what-header {
     grid-column: 1 / 13;
@@ -1266,7 +1287,7 @@ details[open] .faq-chevron {
   }
   .version-strip {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
   .changelog-layout {
     grid-template-columns: 1fr;
@@ -1274,38 +1295,394 @@ details[open] .faq-chevron {
   .changelog-index {
     display: none;
   }
-  .install-grid {
-    grid-template-columns: 1fr;
-  }
   .final-cta-inner {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
 @media (max-width: 768px) {
+  :root {
+    --pad-x: clamp(16px, 4vw, 32px);
+    --section-pad-y: clamp(48px, 6vw, 80px);
+  }
+
+  /* Header & Navigation */
+  .site-header {
+    padding-inline: var(--pad-x);
+  }
+  .site-header .nav-actions .btn-discord {
+    display: none;
+  }
   .nav-links {
     display: none;
   }
   .nav-links.mobile-open {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: var(--header-height);
     left: 0;
     right: 0;
-    background: var(--bg);
+    background: var(--surface);
     border-bottom: 3px solid var(--line);
-    padding: 24px var(--pad-x);
-    gap: 16px;
+    box-shadow: 0 8px 0 var(--line);
+    padding: 20px var(--pad-x);
+    gap: 10px;
+    z-index: 999;
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+  }
+  .nav-links.mobile-open li {
+    width: 100%;
+  }
+  .nav-links.mobile-open .nav-link {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--surface-alt);
+    border: 2px solid var(--line);
+    box-shadow: 3px 3px 0 var(--line);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    transition: background-color 100ms, transform 100ms;
+  }
+  .nav-links.mobile-open .nav-link:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--line);
+  }
+  .nav-links.mobile-open .nav-link.active {
+    background: var(--grass);
+    color: #FFFFFF;
+  }
+  .nav-links.mobile-open .nav-link.active::after {
+    display: none;
+  }
+  .mobile-only-nav-item {
+    display: block;
+  }
+  .nav-link-discord {
+    background: #ECEFFD !important;
+    color: var(--discord) !important;
+    border-color: var(--discord) !important;
   }
   .mobile-menu-btn {
     display: flex;
   }
-  .floating-mob {
+
+  /* Section 1: Bento Grid Single Column */
+  .what-bento {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .bento-media-tile,
+  .bento-tile {
+    padding: 20px;
+  }
+  .showcase-video,
+  .showcase-img {
+    max-height: 320px;
+  }
+
+  /* Section 2: Mob Browser Preview */
+  .preview-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  /* Changelog */
+  .timeline {
+    padding-left: 24px;
+    gap: 32px;
+  }
+  .timeline::before {
+    left: 6px;
+  }
+  .timeline-marker {
+    left: -24px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 64px;
+    --pad-x: 16px;
+    --section-pad-y: 44px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+  h2 {
+    font-size: clamp(24px, 6.5vw, 36px);
+  }
+  h3 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+  p {
+    font-size: 15px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding-block: 28px 36px;
+    min-height: auto;
+  }
+  .hero-copy {
+    gap: 16px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .device-frame {
+    max-width: min(290px, calc(100vw - 32px));
+    box-shadow: 8px 8px 0 var(--line);
+    border-width: 3px;
+  }
+
+  /* Section 2: Mob Browser Grid */
+  .mob-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .mob-card {
+    padding: 12px 6px;
+    gap: 8px;
+  }
+  .mob-card-img-wrap {
+    width: 72px;
+    height: 72px;
+  }
+  .mob-card-img {
+    max-width: 64px;
+    max-height: 64px;
+  }
+  .mob-card-name {
+    font-size: 13px;
+  }
+  .mob-card-chip {
+    opacity: 1;
+    position: static;
+    margin-top: 2px;
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  /* Coming Soon Banner */
+  .more-coming-soon-banner {
+    padding: 18px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .more-coming-soon-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Section 3: Installation Steps */
+  .install-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .step-card {
+    padding: 16px 14px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .step-number {
+    min-width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  /* Section 4: What's New */
+  .version-cta {
+    width: 100%;
+    align-items: stretch;
+  }
+  .version-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Section 5: Final CTA */
+  .final-cta-inner {
+    padding: 28px 16px;
+    gap: 20px;
+  }
+  .final-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .final-cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Section 6: FAQ Accordion */
+  summary.faq-question {
+    padding: 14px 16px;
+    font-size: 16px;
+    gap: 10px;
+  }
+  .faq-answer {
+    padding: 0 16px 14px 16px;
+    font-size: 14px;
+  }
+
+  /* Section 7: Footer */
+  .site-footer {
+    padding-inline: var(--pad-x);
+    padding-block: 36px 24px;
+    gap: 24px;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .legal-notice {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Brand and Header Actions */
+  .brand {
+    font-size: 17px;
+    gap: 8px;
+  }
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .site-header .nav-actions {
+    gap: 8px;
+  }
+  .site-header .nav-actions .btn-sm {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-height: 38px;
+    box-shadow: 3px 3px 0 var(--line);
+  }
+  .btn-label-desktop {
     display: none;
   }
-  .bento-large {
-    grid-template-columns: 1fr;
+  .btn-label-mobile {
+    display: inline;
+  }
+
+  /* Blocks & Buttons Touch Refinement */
+  .block {
+    box-shadow: 4px 4px 0 var(--line);
+  }
+  .block:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--line);
+  }
+  .block:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--line);
+  }
+  .btn {
+    box-shadow: 4px 4px 0 var(--line);
+  }
+  .btn:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--line);
+  }
+  .btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--line);
+  }
+
+  /* Segment toggle */
+  .segment-toggle {
+    width: 100%;
+    display: flex;
+  }
+  .segment-btn {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Bento Media Tile */
+  .bento-media-tile,
+  .bento-tile {
+    padding: 16px 14px;
+  }
+  .showcase-video,
+  .showcase-img {
+    max-height: 240px;
+  }
+
+  /* Step card */
+  .step-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Toast */
+  .toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+    box-shadow: 4px 4px 0 var(--line);
+  }
+
+  /* Changelog Timeline */
+  .timeline {
+    padding-left: 18px;
+    gap: 20px;
+  }
+  .timeline::before {
+    left: 5px;
+  }
+  .timeline-marker {
+    left: -18px;
+    width: 14px;
+    height: 14px;
+  }
+  .timeline-content {
+    padding: 14px 12px;
+  }
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .timeline-changes li {
+    font-size: 13px;
+    gap: 8px;
   }
 }
 

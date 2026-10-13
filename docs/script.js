@@ -384,8 +384,21 @@ function initMobileNav() {
   const navList = document.getElementById("navLinks");
   if (!toggle || !navList) return;
 
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     navList.classList.toggle("mobile-open");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!navList.contains(e.target) && !toggle.contains(e.target)) {
+      navList.classList.remove("mobile-open");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      navList.classList.remove("mobile-open");
+    }
   });
 
   navList.querySelectorAll("a").forEach(a => {
